@@ -11,7 +11,7 @@ public:
 	int			GetHealth( );
 	int			GetFlags( );
 	int			GetTeam( );
-	Vector3		GetPosition( );
+	Vector3_t	GetPosition( );
 	int			GetCrosshairEntityID( );
 	bool		IsDormant( );
 	bool		IsSpotted( );

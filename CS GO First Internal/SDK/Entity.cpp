@@ -13,8 +13,8 @@ int Entity_t::GetTeam( ) {
 	return *reinterpret_cast< int* >( this + g_Netvars::m_iTeamNum );
 }
 
-Vector3 Entity_t::GetPosition( ) {
-	return *reinterpret_cast< Vector3* >( this + g_Netvars::m_vecOrigin );
+Vector3_t Entity_t::GetPosition( ) {
+	return *reinterpret_cast< Vector3_t* >( this + g_Netvars::m_vecOrigin );
 }
 
 int Entity_t::GetCrosshairEntityID( ) {

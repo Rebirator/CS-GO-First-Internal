@@ -1,8 +1,6 @@
 #ifndef __SINGLETON__
 #define __SINGLETON__
 
-#include <mutex>
-
 template < class T >
 class Singleton {
 protected:

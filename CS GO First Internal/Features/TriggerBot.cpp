@@ -8,13 +8,10 @@ void TriggerBot_t::TriggerBot( ) {
 		if ( g_pLocalPlayer->GetCrosshairEntityID( ) > 0 && g_pLocalPlayer->GetCrosshairEntityID( ) <= 64 ) {
 			Entity_t* Entity = Entity_t::Get( ).GetEntityByID( g_pLocalPlayer->GetCrosshairEntityID( ) );
 
-			Vector3 LocalPos = g_pLocalPlayer->GetPosition( );
-			Vector3 EntityPos = Entity->GetPosition( );
-
-			float Distance = abs( LocalPos.x - EntityPos.x + LocalPos.y - EntityPos.y + LocalPos.z - EntityPos.z ) * 0.0254f;
+			Vector3_t Distance;
 
 			if ( Entity && Entity->GetHealth( ) > 0 ) {
-				Sleep( ( int )Distance * 5 );
+				Sleep( Distance.Distance( g_pLocalPlayer->GetPosition( ), Entity->GetPosition( ) ) * 5 );
 				g_pLocalPlayer->DoAttack1( );
 			}
 		}

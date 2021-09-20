@@ -4,7 +4,6 @@
 #include <Windows.h>
 #include "Hazedumper.hpp"
 #include "..\Utils\Defines.hpp"
-#include "Entity.hpp"
 
 namespace g_Game {
 	const uintptr GameModule						= ( uintptr )GetModuleHandle( L"client.dll" );
