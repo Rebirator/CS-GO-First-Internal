@@ -1,4 +1,6 @@
-#pragma once
+#ifndef __OFFSETS__
+#define __OFFSETS__
+
 #include <Windows.h>
 #include "Hazedumper.h"
 #include "..\Utils\Defines.h"
@@ -161,3 +163,5 @@ namespace g_Signatures {
 	const uintptr set_abs_angles					= hazedumper::signatures::set_abs_angles;
 	const uintptr set_abs_origin					= hazedumper::signatures::set_abs_origin;
 }
+
+#endif

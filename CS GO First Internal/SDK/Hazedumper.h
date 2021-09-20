@@ -1,4 +1,6 @@
-#pragma once
+#ifndef __HAZEDUMPER__
+#define __HAZEDUMPER__
+
 #include <cstdint>
 #include <cstddef>
 
@@ -158,3 +160,5 @@ namespace hazedumper {
 		constexpr ::std::ptrdiff_t set_abs_origin = 0x1E2190;
 	} // namespace signatures
 } // namespace hazedumper
+
+#endif

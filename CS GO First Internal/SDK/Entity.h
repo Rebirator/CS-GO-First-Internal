@@ -1,7 +1,13 @@
-#pragma once
+#ifndef __ENTITY__
+#define __ENTITY__
 
 class Entity
 {
 public:
-	int GetTeam( );
+	BYTE	GetFlags( );
+	int		GetTeam( );
+	bool	IsDormant( );
+	bool	IsSpotted( );
 };
+
+#endif
