@@ -67,7 +67,7 @@ namespace g_Netvars {
 	const uintptr m_hMyWeapons						= hazedumper::netvars::m_hMyWeapons;
 	const uintptr m_hObserverTarget					= hazedumper::netvars::m_hObserverTarget;
 	const uintptr m_hOwner							= hazedumper::netvars::m_hOwner;
-	const uintptr m_hOwnerEntity_t					= hazedumper::netvars::m_hOwnerEntity_t;
+	const uintptr m_hOwnerEntity					= hazedumper::netvars::m_hOwnerEntity;
 	const uintptr m_hViewModel						= hazedumper::netvars::m_hViewModel;
 	const uintptr m_iAccountID						= hazedumper::netvars::m_iAccountID;
 	const uintptr m_iClip1							= hazedumper::netvars::m_iClip1;
@@ -75,7 +75,7 @@ namespace g_Netvars {
 	const uintptr m_iCompetitiveWins				= hazedumper::netvars::m_iCompetitiveWins;
 	const uintptr m_iCrosshairId					= hazedumper::netvars::m_iCrosshairId;
 	const uintptr m_iDefaultFOV						= hazedumper::netvars::m_iDefaultFOV;
-	const uintptr m_iEntity_tQuality					= hazedumper::netvars::m_iEntity_tQuality;
+	const uintptr m_iEntityQuality					= hazedumper::netvars::m_iEntityQuality;
 	const uintptr m_iFOVStart						= hazedumper::netvars::m_iFOVStart;
 	const uintptr m_iGlowIndex						= hazedumper::netvars::m_iGlowIndex;
 	const uintptr m_iHealth							= hazedumper::netvars::m_iHealth;
@@ -121,7 +121,7 @@ namespace g_Signatures {
 	const uintptr dwClientState_PlayerInfo			= hazedumper::signatures::dwClientState_PlayerInfo;
 	const uintptr dwClientState_State				= hazedumper::signatures::dwClientState_State;
 	const uintptr dwClientState_ViewAngles			= hazedumper::signatures::dwClientState_ViewAngles;
-	const uintptr dwEntity_tList						= hazedumper::signatures::dwEntity_tList;
+	const uintptr dwEntityList						= hazedumper::signatures::dwEntityList;
 	const uintptr dwForceAttack						= hazedumper::signatures::dwForceAttack;
 	const uintptr dwForceAttack2					= hazedumper::signatures::dwForceAttack2;
 	const uintptr dwForceBackward					= hazedumper::signatures::dwForceBackward;

@@ -178,6 +178,7 @@
     <ClCompile Include="Main\main.cpp" />
     <ClCompile Include="Main\Hack.cpp" />
     <ClCompile Include="SDK\Entity.cpp" />
+    <ClCompile Include="Utils\Vector.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="SDK\cpp.hint" />

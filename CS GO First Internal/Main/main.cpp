@@ -22,7 +22,7 @@ DWORD WINAPI HackThread( HMODULE hModule )
             return EXIT_SUCCESS;
         }
 
-        Sleep( 2 );
+        Sleep( 7 ); // 144 FPS ( 1 000 / 144 = 6,944ms )
     }
 }
 
