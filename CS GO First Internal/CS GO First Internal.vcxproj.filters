@@ -18,9 +18,6 @@
     <ClInclude Include="SDK\Offsets.hpp">
       <Filter>SDK</Filter>
     </ClInclude>
-    <ClInclude Include="Features\BunnyHop.hpp">
-      <Filter>Features</Filter>
-    </ClInclude>
     <ClInclude Include="Features\Misc.hpp">
       <Filter>Features</Filter>
     </ClInclude>
@@ -36,7 +33,7 @@
     <ClInclude Include="Utils\Defines.hpp">
       <Filter>Utils</Filter>
     </ClInclude>
-    <ClInclude Include="Utils\Vector3.hpp">
+    <ClInclude Include="Utils\Vector.hpp">
       <Filter>Utils</Filter>
     </ClInclude>
     <ClInclude Include="Main\Hack.hpp">
@@ -47,9 +44,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Features\BunnyHop.cpp">
-      <Filter>Features</Filter>
-    </ClCompile>
     <ClCompile Include="Features\Misc.cpp">
       <Filter>Features</Filter>
     </ClCompile>

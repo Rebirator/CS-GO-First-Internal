@@ -162,7 +162,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Features\BunnyHop.hpp" />
     <ClInclude Include="Features\Misc.hpp" />
     <ClInclude Include="Features\TriggerBot.hpp" />
     <ClInclude Include="Main\Hack.hpp" />
@@ -171,10 +170,9 @@
     <ClInclude Include="SDK\Offsets.hpp" />
     <ClInclude Include="Utils\Defines.hpp" />
     <ClInclude Include="Utils\Singleton.hpp" />
-    <ClInclude Include="Utils\Vector3.hpp" />
+    <ClInclude Include="Utils\Vector.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Features\BunnyHop.cpp" />
     <ClCompile Include="Features\Misc.cpp" />
     <ClCompile Include="Features\TriggerBot.cpp" />
     <ClCompile Include="Main\main.cpp" />

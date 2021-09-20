@@ -63,7 +63,7 @@ namespace hazedumper {
 		constexpr ::std::ptrdiff_t m_hMyWeapons = 0x2DF8;
 		constexpr ::std::ptrdiff_t m_hObserverTarget = 0x338C;
 		constexpr ::std::ptrdiff_t m_hOwner = 0x29CC;
-		constexpr ::std::ptrdiff_t m_hOwnerEntity = 0x14C;
+		constexpr ::std::ptrdiff_t m_hOwnerEntity_t = 0x14C;
 		constexpr ::std::ptrdiff_t m_hViewModel = 0x32F8;
 		constexpr ::std::ptrdiff_t m_iAccountID = 0x2FC8;
 		constexpr ::std::ptrdiff_t m_iClip1 = 0x3264;
@@ -71,7 +71,7 @@ namespace hazedumper {
 		constexpr ::std::ptrdiff_t m_iCompetitiveWins = 0x1B88;
 		constexpr ::std::ptrdiff_t m_iCrosshairId = 0xB3E8;
 		constexpr ::std::ptrdiff_t m_iDefaultFOV = 0x332C;
-		constexpr ::std::ptrdiff_t m_iEntityQuality = 0x2FAC;
+		constexpr ::std::ptrdiff_t m_iEntity_tQuality = 0x2FAC;
 		constexpr ::std::ptrdiff_t m_iFOVStart = 0x31E8;
 		constexpr ::std::ptrdiff_t m_iGlowIndex = 0xA438;
 		constexpr ::std::ptrdiff_t m_iHealth = 0x100;
@@ -116,7 +116,7 @@ namespace hazedumper {
 		constexpr ::std::ptrdiff_t dwClientState_PlayerInfo = 0x52C0;
 		constexpr ::std::ptrdiff_t dwClientState_State = 0x108;
 		constexpr ::std::ptrdiff_t dwClientState_ViewAngles = 0x4D90;
-		constexpr ::std::ptrdiff_t dwEntityList = 0x4DA541C;
+		constexpr ::std::ptrdiff_t dwEntity_tList = 0x4DA541C;
 		constexpr ::std::ptrdiff_t dwForceAttack = 0x31D59A4;
 		constexpr ::std::ptrdiff_t dwForceAttack2 = 0x31D59B0;
 		constexpr ::std::ptrdiff_t dwForceBackward = 0x31D595C;
@@ -161,4 +161,4 @@ namespace hazedumper {
 	} // namespace signatures
 } // namespace hazedumper
 
-#endif
+#endif//__HAZEDUMPER__

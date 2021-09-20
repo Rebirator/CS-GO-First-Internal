@@ -1,33 +1,7 @@
 #include <Windows.h>
 #include <iostream>
 #include <cmath>
-#include "..\SDK\Entity.hpp"
-#include "..\SDK\Offsets.hpp"
-
-bool bunnyhop = false, radarhack = false, antiflash = false, triggerbot = false;
-
-void FuncsController( )
-{
-    if ( GetAsyncKeyState( VK_F1 ) & 1 ) {
-        bunnyhop = !bunnyhop;
-        std::cout << "Bhop " << bunnyhop << std::endl;
-    }
-
-    if ( GetAsyncKeyState( VK_F2 ) & 1 ) {
-        radarhack = !radarhack;
-        std::cout << "RadarHack " << radarhack << std::endl;
-    }
-
-    if ( GetAsyncKeyState( VK_F3 ) & 1 ) {
-        antiflash = !antiflash;
-        std::cout << "AntiFlash " << antiflash << std::endl;
-    }
-
-    if ( GetAsyncKeyState( VK_F4 ) & 1 ) {
-        triggerbot = !triggerbot;
-        std::cout << "TriggerBot " << triggerbot << std::endl;
-    }
-}
+#include "..\Main\Hack.hpp"
 
 DWORD WINAPI HackThread( HMODULE hModule )
 {
@@ -38,7 +12,7 @@ DWORD WINAPI HackThread( HMODULE hModule )
 
     while ( true )
     {
-        std::cout << g_pLocalPlayer->GetFlags( ) << std::endl;
+        Hack( );
 
         if ( GetAsyncKeyState( VK_INSERT ) ) {
             if ( F_Console )

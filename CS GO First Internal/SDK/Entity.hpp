@@ -4,15 +4,17 @@
 #include "Offsets.hpp"
 #include "..\Utils\Singleton.hpp"
 
-class Entity : public Singleton< Entity >
+class Entity_t : public Singleton< Entity_t >
 {
 public:
-	int		GetFlags( );
-	int		GetTeam( );
-	bool	IsDormant( );
-	bool	IsSpotted( );
+	int			GetFlags( );
+	int			GetTeam( );
+	bool		IsDormant( );
+	bool		IsSpotted( );
+	void		DoJump( );
 
-	Entity* GetLocalPlayer( );
+	Entity_t*	GetEntityByID( short int EntityID );
+	Entity_t*	GetLocalPlayer( );
 };
 
-#endif
+#endif//__Entity_t__

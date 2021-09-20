@@ -4,6 +4,6 @@
 #include "..\SDK\Entity.hpp"
 
 #define uintptr uintptr_t
-#define g_pLocalPlayer Entity::Get( ).GetLocalPlayer( )
+#define g_pLocalPlayer Entity_t::Get( ).GetLocalPlayer( )
 
-#endif
+#endif//__DEFINES__
