@@ -162,21 +162,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Features\BunnyHop.h" />
-    <ClInclude Include="Features\Misc.h" />
-    <ClInclude Include="Features\TriggerBot.h" />
-    <ClInclude Include="SDK\Entity.h" />
-    <ClInclude Include="SDK\EntityOld.h" />
-    <ClInclude Include="SDK\Hazedumper.h" />
-    <ClInclude Include="SDK\Offsets.h" />
-    <ClInclude Include="Utils\Defines.h" />
-    <ClInclude Include="Utils\Vector3.h" />
+    <ClInclude Include="Features\BunnyHop.hpp" />
+    <ClInclude Include="Features\Misc.hpp" />
+    <ClInclude Include="Features\TriggerBot.hpp" />
+    <ClInclude Include="Main\Hack.hpp" />
+    <ClInclude Include="SDK\Entity.hpp" />
+    <ClInclude Include="SDK\Hazedumper.hpp" />
+    <ClInclude Include="SDK\Offsets.hpp" />
+    <ClInclude Include="Utils\Defines.hpp" />
+    <ClInclude Include="Utils\Singleton.hpp" />
+    <ClInclude Include="Utils\Vector3.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Features\BunnyHop.cpp" />
     <ClCompile Include="Features\Misc.cpp" />
     <ClCompile Include="Features\TriggerBot.cpp" />
-    <ClCompile Include="MainDll\main.cpp" />
+    <ClCompile Include="Main\main.cpp" />
+    <ClCompile Include="Main\Hack.cpp" />
     <ClCompile Include="SDK\Entity.cpp" />
   </ItemGroup>
   <ItemGroup>

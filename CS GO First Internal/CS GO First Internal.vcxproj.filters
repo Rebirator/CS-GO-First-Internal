@@ -1,9 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="maindll">
-      <UniqueIdentifier>{9ec69465-3953-4c9c-9b12-8d26099bdccb}</UniqueIdentifier>
-    </Filter>
     <Filter Include="SDK">
       <UniqueIdentifier>{28ec36e5-af27-4d25-b2b6-bf4b73d4f097}</UniqueIdentifier>
     </Filter>
@@ -13,40 +10,43 @@
     <Filter Include="Utils">
       <UniqueIdentifier>{86b7532f-a81d-4f9b-a545-0ebd935bc786}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Main">
+      <UniqueIdentifier>{9ec69465-3953-4c9c-9b12-8d26099bdccb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SDK\Offsets.h">
+    <ClInclude Include="SDK\Offsets.hpp">
       <Filter>SDK</Filter>
     </ClInclude>
-    <ClInclude Include="Features\BunnyHop.h">
+    <ClInclude Include="Features\BunnyHop.hpp">
       <Filter>Features</Filter>
     </ClInclude>
-    <ClInclude Include="Features\Misc.h">
+    <ClInclude Include="Features\Misc.hpp">
       <Filter>Features</Filter>
     </ClInclude>
-    <ClInclude Include="Features\TriggerBot.h">
+    <ClInclude Include="Features\TriggerBot.hpp">
       <Filter>Features</Filter>
     </ClInclude>
-    <ClInclude Include="SDK\Entity.h">
+    <ClInclude Include="SDK\Entity.hpp">
       <Filter>SDK</Filter>
     </ClInclude>
-    <ClInclude Include="SDK\EntityOld.h">
+    <ClInclude Include="SDK\Hazedumper.hpp">
       <Filter>SDK</Filter>
     </ClInclude>
-    <ClInclude Include="SDK\Hazedumper.h">
-      <Filter>SDK</Filter>
-    </ClInclude>
-    <ClInclude Include="Utils\Defines.h">
+    <ClInclude Include="Utils\Defines.hpp">
       <Filter>Utils</Filter>
     </ClInclude>
-    <ClInclude Include="Utils\Vector3.h">
+    <ClInclude Include="Utils\Vector3.hpp">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\Hack.hpp">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\Singleton.hpp">
       <Filter>Utils</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="MainDll\main.cpp">
-      <Filter>maindll</Filter>
-    </ClCompile>
     <ClCompile Include="Features\BunnyHop.cpp">
       <Filter>Features</Filter>
     </ClCompile>
@@ -58,6 +58,12 @@
     </ClCompile>
     <ClCompile Include="SDK\Entity.cpp">
       <Filter>SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\Hack.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\main.cpp">
+      <Filter>Main</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

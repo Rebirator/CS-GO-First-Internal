@@ -1,8 +1,8 @@
 #include <Windows.h>
 #include <iostream>
 #include <cmath>
-#include "..\SDK\Entity.h"
-#include "..\SDK\Offsets.h"
+#include "..\SDK\Entity.hpp"
+#include "..\SDK\Offsets.hpp"
 
 bool bunnyhop = false, radarhack = false, antiflash = false, triggerbot = false;
 
@@ -38,9 +38,7 @@ DWORD WINAPI HackThread( HMODULE hModule )
 
     while ( true )
     {
-        Entity* LocalPlayer = *reinterpret_cast< Entity** >( g_Game::GameModule + g_Signatures::dwLocalPlayer );
-
-        std::cout << LocalPlayer->GetTeam( ) << std::endl;
+        std::cout << g_pLocalPlayer->GetFlags( ) << std::endl;
 
         if ( GetAsyncKeyState( VK_INSERT ) ) {
             if ( F_Console )
