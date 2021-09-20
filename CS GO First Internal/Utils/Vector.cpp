@@ -2,11 +2,6 @@
 #include "Vector.hpp"
 #include "Defines.hpp"
 
-Vector3_t::Vector3_t( void ) 
-{
-
-};
-
 Vector3_t::Vector3_t( float X, float Y, float Z ) 
 {
 	this->x = X;
@@ -14,7 +9,12 @@ Vector3_t::Vector3_t( float X, float Y, float Z )
 	this->z = Z;
 }
 
-void Vector3_t::Init(float X, float Y, float Z) 
+Vector3_t::Vector3_t( void ) 
+{
+	Vector3_t::Init( );
+};
+
+void Vector3_t::Init( float X, float Y, float Z ) 
 {
 	this->x = X;
 	this->y = Y;
