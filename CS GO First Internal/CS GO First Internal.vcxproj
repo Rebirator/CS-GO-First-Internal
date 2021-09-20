@@ -72,9 +72,13 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)Output\$(Configuration)\</OutDir>
+    <IntDir>OBJ\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)Output\$(Configuration)\</OutDir>
+    <IntDir>OBJ\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -90,7 +94,9 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <Optimization>Disabled</Optimization>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -155,12 +161,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="framework.h" />
-    <ClInclude Include="func_offsets.h" />
-    <ClInclude Include="offsets.h" />
+    <ClInclude Include="Features\BunnyHop.h" />
+    <ClInclude Include="Features\Misc.h" />
+    <ClInclude Include="Features\TriggerBot.h" />
+    <ClInclude Include="SDK\Entity.h" />
+    <ClInclude Include="SDK\EntityOld.h" />
+    <ClInclude Include="SDK\Hazedumper.h" />
+    <ClInclude Include="SDK\Offsets.h" />
+    <ClInclude Include="Utils\Defines.h" />
+    <ClInclude Include="Utils\Vector3.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Features\BunnyHop.cpp" />
+    <ClCompile Include="Features\Misc.cpp" />
+    <ClCompile Include="Features\TriggerBot.cpp" />
+    <ClCompile Include="MainDll\main.cpp" />
+    <ClCompile Include="SDK\Entity.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SDK\cpp.hint" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

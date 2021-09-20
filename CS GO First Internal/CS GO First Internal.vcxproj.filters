@@ -1,33 +1,66 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Исходные файлы">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="maindll">
+      <UniqueIdentifier>{9ec69465-3953-4c9c-9b12-8d26099bdccb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Файлы заголовков">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    <Filter Include="SDK">
+      <UniqueIdentifier>{28ec36e5-af27-4d25-b2b6-bf4b73d4f097}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Файлы ресурсов">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="Features">
+      <UniqueIdentifier>{48f94344-201b-4d91-8adc-01ef63612017}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{86b7532f-a81d-4f9b-a545-0ebd935bc786}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="framework.h">
-      <Filter>Файлы заголовков</Filter>
+    <ClInclude Include="SDK\Offsets.h">
+      <Filter>SDK</Filter>
     </ClInclude>
-    <ClInclude Include="offsets.h">
-      <Filter>Файлы заголовков</Filter>
+    <ClInclude Include="Features\BunnyHop.h">
+      <Filter>Features</Filter>
     </ClInclude>
-    <ClInclude Include="func_offsets.h">
-      <Filter>Файлы заголовков</Filter>
+    <ClInclude Include="Features\Misc.h">
+      <Filter>Features</Filter>
+    </ClInclude>
+    <ClInclude Include="Features\TriggerBot.h">
+      <Filter>Features</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\Entity.h">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\EntityOld.h">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\Hazedumper.h">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\Defines.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\Vector3.h">
+      <Filter>Utils</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Исходные файлы</Filter>
+    <ClCompile Include="MainDll\main.cpp">
+      <Filter>maindll</Filter>
     </ClCompile>
+    <ClCompile Include="Features\BunnyHop.cpp">
+      <Filter>Features</Filter>
+    </ClCompile>
+    <ClCompile Include="Features\Misc.cpp">
+      <Filter>Features</Filter>
+    </ClCompile>
+    <ClCompile Include="Features\TriggerBot.cpp">
+      <Filter>Features</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\Entity.cpp">
+      <Filter>SDK</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SDK\cpp.hint" />
   </ItemGroup>
 </Project>
