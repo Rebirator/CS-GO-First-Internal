@@ -27,4 +27,20 @@ public:
 	}
 };
 
+template < class T >
+class _Singleton_ {
+public:
+	static T& G( ) {
+		static T Inst { };
+
+		return Inst;
+	}
+
+	static T*& pG( ) {
+		static T* Inst { };
+
+		return Inst;
+	}
+};
+
 #endif//__SINGLETON__

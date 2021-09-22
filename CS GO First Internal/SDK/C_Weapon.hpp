@@ -3,7 +3,7 @@
 
 #include "Offsets.hpp"
 #include "..\Utils\Singleton.hpp"
-#include "..\Utils\Vector.hpp"
+#include "..\Utils\Vector3.hpp"
 #include "C_Entity.hpp"
 
 class C_Weapon : public Singleton< C_Weapon > {

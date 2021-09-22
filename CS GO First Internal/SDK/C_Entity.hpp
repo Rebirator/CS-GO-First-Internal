@@ -3,7 +3,7 @@
 
 #include "Offsets.hpp"
 #include "..\Utils\Singleton.hpp"
-#include "..\Utils\Vector.hpp"
+#include "..\Utils\Vector3.hpp"
 #include "C_Weapon.hpp"
 
 class C_Entity : public Singleton< C_Entity >
@@ -14,7 +14,7 @@ public:
 	int			GetHealth( );
 	int			GetFlags( );
 	int			GetTeam( );
-	Vector3_t	GetPosition( );
+	Vector3	GetPosition( );
 	bool		IsDormant( );
 	bool		IsSpotted( );
 	void		DoJump( );
@@ -24,7 +24,7 @@ public:
 	C_Entity*	GetByID( short int EntityID );
 	int			GetCrosshairEntityID( );
 	C_Entity*	GetByCrosshairID( );
-	C_Entity*	GetLocalPlayer( );
+	C_Entity*	Get( uintptr Entity );
 	uintptr		Get( );
 };
 

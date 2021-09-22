@@ -3,9 +3,10 @@
 
 #define uintptr			uintptr_t
 #define g_LocalPlayer   *reinterpret_cast< uintptr* >( g_Game::ClientDll + g_Game::g_Signatures::dwLocalPlayer )
-#define g_Client		C_Client::G( ).Get( )
-#define g_pLocalEntity	C_Entity::G( ).GetLocalPlayer( )
+#define g_pLocalEntity	C_Entity::G( ).Get( g_LocalPlayer )
 #define g_pLocalWeapon	C_Weapon::G( ).GetLocalPlayer( )
+#define g_Client		C_Client::G( ).Get( )
+#define g_Vector3		Vector3::pG( )
 #define CS_INCH_TO_METERS( a ) ( ( float )( a * 0.0254f ) )
 
 #define KEY_TOGGLE 1

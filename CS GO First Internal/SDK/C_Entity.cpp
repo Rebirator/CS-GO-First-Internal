@@ -15,12 +15,12 @@ int C_Entity::GetTeam( ) {
 	return *reinterpret_cast< int* >( this + g_Game::g_Netvars::m_iTeamNum );
 }
 
-Vector3_t C_Entity::GetPosition( ) {
-	return *reinterpret_cast< Vector3_t* >( this + g_Game::g_Netvars::m_vecOrigin );
+Vector3 C_Entity::GetPosition( ) {
+	return *reinterpret_cast< Vector3* >( this + g_Game::g_Netvars::m_vecOrigin );
 }
 
 int C_Entity::GetCrosshairEntityID( ) {
-	return *reinterpret_cast< int* >( this->GetLocalPlayer( ) + g_Game::g_Netvars::m_iCrosshairId );
+	return *reinterpret_cast< int* >( this->Get( g_LocalPlayer ) + g_Game::g_Netvars::m_iCrosshairId );
 }
 
 bool C_Entity::IsDormant( ) {
@@ -55,8 +55,8 @@ C_Entity* C_Entity::GetByCrosshairID( ) {
 	return nullptr;
 }
 
-C_Entity* C_Entity::GetLocalPlayer( ) {
-	return *reinterpret_cast< C_Entity** >( g_Game::ClientDll + g_Game::g_Signatures::dwLocalPlayer );
+C_Entity* C_Entity::Get( uintptr Entity ) {
+	return *reinterpret_cast< C_Entity** >( Entity );
 }
 
 uintptr C_Entity::Get( ) {

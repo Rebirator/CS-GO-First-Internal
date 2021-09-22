@@ -33,7 +33,7 @@
     <ClInclude Include="Utils\Defines.hpp">
       <Filter>Utils</Filter>
     </ClInclude>
-    <ClInclude Include="Utils\Vector.hpp">
+    <ClInclude Include="Utils\Vector3.hpp">
       <Filter>Utils</Filter>
     </ClInclude>
     <ClInclude Include="Main\Hack.hpp">
@@ -65,7 +65,7 @@
     <ClCompile Include="Main\main.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="Utils\Vector.cpp">
+    <ClCompile Include="Utils\Vector3.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
     <ClCompile Include="SDK\C_Weapon.cpp">

@@ -172,7 +172,7 @@
     <ClInclude Include="SDK\C_Weapon.hpp" />
     <ClInclude Include="Utils\Defines.hpp" />
     <ClInclude Include="Utils\Singleton.hpp" />
-    <ClInclude Include="Utils\Vector.hpp" />
+    <ClInclude Include="Utils\Vector3.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Features\Misc.cpp" />
@@ -182,7 +182,7 @@
     <ClCompile Include="SDK\C_Client.cpp" />
     <ClCompile Include="SDK\C_Entity.cpp" />
     <ClCompile Include="SDK\C_Weapon.cpp" />
-    <ClCompile Include="Utils\Vector.cpp" />
+    <ClCompile Include="Utils\Vector3.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="SDK\cpp.hint" />
