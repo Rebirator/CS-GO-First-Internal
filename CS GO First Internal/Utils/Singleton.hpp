@@ -14,8 +14,14 @@ protected:
 	Singleton& operator = ( Singleton&& )		= delete;
 
 public:
-	static T& Get() {
+	static T& G( ) {
 		static T Inst { };
+
+		return Inst;
+	}
+
+	static T*& pG( ) {
+		static T* Inst { };
 
 		return Inst;
 	}

@@ -23,10 +23,7 @@ void Vector3_t::Init( float X, float Y, float Z )
 
 float Vector3_t::Distance( Vector3_t a, Vector3_t b ) 
 {
-	return float 
-	( 
-		CS_INCH_TO_METERS (
-			abs( ( a.x - b.x ) + ( a.y - b.y ) + ( a.z - b.z ) ) 
-		) 
+	return CS_INCH_TO_METERS ( 
+		sqrt( pow( a.x - b.x, 2) + pow( a.y - b.y, 2) + pow( a.z - b.z, 2) )
 	);
 }

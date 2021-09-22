@@ -2,6 +2,7 @@
 #include <iostream>
 #include <cmath>
 #include "..\Main\Hack.hpp"
+#include "..\Utils\Defines.hpp"
 
 DWORD WINAPI HackThread( HMODULE hModule )
 {
@@ -22,7 +23,7 @@ DWORD WINAPI HackThread( HMODULE hModule )
             return EXIT_SUCCESS;
         }
 
-        Sleep( 7 ); // 144 FPS ( 1 000 / 144 = 6,944ms )
+        Sleep( 1 );
     }
 }
 
