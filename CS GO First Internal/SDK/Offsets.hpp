@@ -9,10 +9,6 @@ namespace g_Game {
 	const uintptr ClientDll								= ( uintptr )GetModuleHandle( L"client.dll" );
 	const uintptr EngineDll								= ( uintptr )GetModuleHandle( L"engine.dll" );
 
-	namespace g_Globals {
-		const uintptr MaxClients						= 0x18;
-	}
-
 	namespace g_Netvars {
 		const uintptr cs_gamerules_data					= hazedumper::netvars::cs_gamerules_data;
 		const uintptr m_ArmorValue						= hazedumper::netvars::m_ArmorValue;
