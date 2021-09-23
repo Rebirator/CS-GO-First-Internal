@@ -45,8 +45,14 @@
     <ClInclude Include="SDK\C_Weapon.hpp">
       <Filter>SDK</Filter>
     </ClInclude>
-    <ClInclude Include="SDK\C_Client.h">
+    <ClInclude Include="SDK\C_Client.hpp">
       <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\C_GlowManager.hpp">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="Features\Glow.h">
+      <Filter>Features</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -73,6 +79,12 @@
     </ClCompile>
     <ClCompile Include="SDK\C_Client.cpp">
       <Filter>SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\C_GlowManager.cpp">
+      <Filter>SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="Features\Glow.cpp">
+      <Filter>Features</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

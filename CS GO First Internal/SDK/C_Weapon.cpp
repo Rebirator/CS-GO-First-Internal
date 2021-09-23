@@ -3,16 +3,16 @@
 #include "C_Entity.hpp"
 
 int C_Weapon::GetID( ) {
-	return *reinterpret_cast< int* >( this + g_Game::g_Netvars::m_iItemDefinitionIndex );
+	return *reinterpret_cast< int* >( this + g_Game::Netvars::m_iItemDefinitionIndex );
 }
 
-C_Weapon* C_Weapon::GetEntity( uintptr EntityWeapon ) {
-	return *reinterpret_cast< C_Weapon** >( g_Game::ClientDll + g_Game::g_Signatures::dwEntityList + ( EntityWeapon - 1 ) * 0x10 );
+C_Weapon* C_Weapon::GetEntity( uintptr pEntityWeapon ) {
+	return *reinterpret_cast< C_Weapon** >( g_Game::ClientDll + g_Game::Signatures::dwEntityList + ( pEntityWeapon - 1 ) * 0x10 );
 }
 
-C_Weapon* C_Weapon::GetWeapon( uintptr Entity )
+C_Weapon* C_Weapon::GetWeapon( uintptr pEntity )
 {
-	return this->GetEntity( *reinterpret_cast< uintptr* >( Entity + g_Game::g_Netvars::m_hActiveWeapon ) & 0xFFF );
+	return this->GetEntity( *reinterpret_cast< uintptr* >( pEntity + g_Game::Netvars::m_hActiveWeapon ) & 0xFFF );
 }
 
 uintptr C_Weapon::Get( )

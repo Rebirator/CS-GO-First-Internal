@@ -14,16 +14,17 @@ public:
 	int			GetHealth( );
 	int			GetFlags( );
 	int			GetTeam( );
-	Vector3	GetPosition( );
+	Vector3		GetPosition( );
 	bool		IsDormant( );
 	bool		IsSpotted( );
 	void		DoJump( );
 	void		DoAttack1( );
 	void		DoAttack2( );
 
-	C_Entity*	GetByID( short int EntityID );
+	C_Entity*	GetByID( short EntityID );
 	int			GetCrosshairEntityID( );
 	C_Entity*	GetByCrosshairID( );
+
 	C_Entity*	Get( uintptr Entity );
 	uintptr		Get( );
 };

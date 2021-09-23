@@ -9,7 +9,7 @@ namespace g_Game {
 	const uintptr ClientDll								= ( uintptr )GetModuleHandle( L"client.dll" );
 	const uintptr EngineDll								= ( uintptr )GetModuleHandle( L"engine.dll" );
 
-	namespace g_Netvars {
+	namespace Netvars {
 		const uintptr cs_gamerules_data					= hazedumper::netvars::cs_gamerules_data;
 		const uintptr m_ArmorValue						= hazedumper::netvars::m_ArmorValue;
 		const uintptr m_Collision						= hazedumper::netvars::m_Collision;
@@ -75,6 +75,7 @@ namespace g_Game {
 		const uintptr m_iCrosshairId					= hazedumper::netvars::m_iCrosshairId;
 		const uintptr m_iDefaultFOV						= hazedumper::netvars::m_iDefaultFOV;
 		const uintptr m_iEntityQuality					= hazedumper::netvars::m_iEntityQuality;
+		const uintptr m_iFOV 							= hazedumper::netvars::m_iFOV;
 		const uintptr m_iFOVStart						= hazedumper::netvars::m_iFOVStart;
 		const uintptr m_iGlowIndex						= hazedumper::netvars::m_iGlowIndex;
 		const uintptr m_iHealth							= hazedumper::netvars::m_iHealth;
@@ -104,7 +105,7 @@ namespace g_Game {
 		const uintptr m_zoomLevel						= hazedumper::netvars::m_zoomLevel;
 	}
 
-	namespace g_Signatures {
+	namespace Signatures {
 		const uintptr anim_overlays						= hazedumper::signatures::anim_overlays;
 		const uintptr clientstate_choked_commands		= hazedumper::signatures::clientstate_choked_commands;
 		const uintptr clientstate_delta_ticks			= hazedumper::signatures::clientstate_delta_ticks;

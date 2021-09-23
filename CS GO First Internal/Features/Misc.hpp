@@ -2,8 +2,9 @@
 #define __MISC__
 
 #include "..\Utils\Singleton.hpp"
+#include "..\Utils\Defines.hpp"
 
-class Misc_t : public Singleton< Misc_t > 
+class F_Misc : public Singleton< F_Misc > 
 {
 public:
 	void BunnyHop( );

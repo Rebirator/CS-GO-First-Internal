@@ -162,11 +162,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Features\Glow.h" />
     <ClInclude Include="Features\Misc.hpp" />
     <ClInclude Include="Features\TriggerBot.hpp" />
     <ClInclude Include="Main\Hack.hpp" />
-    <ClInclude Include="SDK\C_Client.h" />
+    <ClInclude Include="SDK\C_Client.hpp" />
     <ClInclude Include="SDK\C_Entity.hpp" />
+    <ClInclude Include="SDK\C_GlowManager.hpp" />
     <ClInclude Include="SDK\Hazedumper.hpp" />
     <ClInclude Include="SDK\Offsets.hpp" />
     <ClInclude Include="SDK\C_Weapon.hpp" />
@@ -175,12 +177,14 @@
     <ClInclude Include="Utils\Vector3.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Features\Glow.cpp" />
     <ClCompile Include="Features\Misc.cpp" />
     <ClCompile Include="Features\TriggerBot.cpp" />
     <ClCompile Include="Main\main.cpp" />
     <ClCompile Include="Main\Hack.cpp" />
     <ClCompile Include="SDK\C_Client.cpp" />
     <ClCompile Include="SDK\C_Entity.cpp" />
+    <ClCompile Include="SDK\C_GlowManager.cpp" />
     <ClCompile Include="SDK\C_Weapon.cpp" />
     <ClCompile Include="Utils\Vector3.cpp" />
   </ItemGroup>

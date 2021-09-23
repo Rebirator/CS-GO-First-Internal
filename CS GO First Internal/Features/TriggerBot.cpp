@@ -3,7 +3,7 @@
 #include "..\SDK\C_Weapon.hpp"
 #include "..\Utils\Vector3.hpp"
 
-void TriggerBot_t::TriggerBot( ) {
+void F_TriggerBot::TriggerBot( ) {
 	C_Entity* Entity = C_Entity::G( ).GetByCrosshairID( );
 
 	if ( Entity && Entity->GetHealth( ) > 0 && Entity->GetTeam( ) != g_pLocalEntity->GetTeam( ) ) {

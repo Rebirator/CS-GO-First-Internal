@@ -9,8 +9,8 @@
 class C_Weapon : public Singleton< C_Weapon > {
 public:
 	int			GetID( );
-	C_Weapon*	GetEntity( uintptr EntityWeapon );
-	C_Weapon*	GetWeapon( uintptr Entity );
+	C_Weapon*	GetEntity( uintptr pEntityWeapon );
+	C_Weapon*	GetWeapon( uintptr pEntity );
 	uintptr		Get( );
 };
 
