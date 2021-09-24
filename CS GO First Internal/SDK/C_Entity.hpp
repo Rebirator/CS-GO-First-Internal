@@ -15,8 +15,10 @@ public:
 	int			GetFlags( );
 	int			GetTeam( );
 	Vector3		GetPosition( );
+	bool		IsAlive( );
 	bool		IsDormant( );
 	bool		IsSpotted( );
+	bool		IsDefusing( );
 	void		DoJump( );
 	void		DoAttack1( );
 	void		DoAttack2( );

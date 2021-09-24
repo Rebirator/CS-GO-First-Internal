@@ -3,9 +3,6 @@
 #include "C_Entity.hpp"
 
 int C_Weapon::GetID( ) {
-	if ( !this )
-		return NULL;
-
 	return *reinterpret_cast< int* >( this + g_Game::Netvars::m_iItemDefinitionIndex );
 }
 
@@ -14,9 +11,6 @@ C_Weapon* C_Weapon::GetEntity( uintptr pEntityWeapon ) {
 }
 
 C_Weapon* C_Weapon::GetWeapon( uintptr pEntity ) {
-	if ( !this )
-		return nullptr;
-
 	return this->GetEntity( *reinterpret_cast< uintptr* >( pEntity + g_Game::Netvars::m_hActiveWeapon ) & 0xFFF );
 }
 

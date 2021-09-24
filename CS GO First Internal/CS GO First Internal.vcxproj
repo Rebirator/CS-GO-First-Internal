@@ -169,6 +169,7 @@
     <ClInclude Include="Gui\Menu.hpp" />
     <ClInclude Include="Main\Hack.hpp" />
     <ClInclude Include="SDK\C_Client.hpp" />
+    <ClInclude Include="SDK\C_ColorRenderManager.hpp" />
     <ClInclude Include="SDK\C_Entity.hpp" />
     <ClInclude Include="SDK\C_GlowManager.hpp" />
     <ClInclude Include="SDK\Hazedumper.hpp" />
@@ -186,6 +187,7 @@
     <ClCompile Include="Main\main.cpp" />
     <ClCompile Include="Main\Hack.cpp" />
     <ClCompile Include="SDK\C_Client.cpp" />
+    <ClCompile Include="SDK\C_ColorRenderManager.cpp" />
     <ClCompile Include="SDK\C_Entity.cpp" />
     <ClCompile Include="SDK\C_GlowManager.cpp" />
     <ClCompile Include="SDK\C_Weapon.cpp" />
