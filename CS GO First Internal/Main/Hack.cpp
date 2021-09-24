@@ -11,5 +11,6 @@ void Hack( ) {
 		F_TriggerBot::G( ).TriggerBot( );
 		F_Glow::G( ).Glow( );
 		F_Misc::G( ).BunnyHop( );
+		F_Misc::G( ).RadarHack( );
 	}
 }

@@ -34,15 +34,19 @@ bool C_Entity::IsAlive( ) {
 }
 
 bool C_Entity::IsDormant( ) {
-	return *reinterpret_cast< int* >( this + g_Game::Signatures::m_bDormant );
+	return *reinterpret_cast< bool* >( this + g_Game::Signatures::m_bDormant );
 }
 
 bool C_Entity::IsSpotted( ) {
-	return *reinterpret_cast< int* >( this + g_Game::Netvars::m_bSpotted );
+	return *reinterpret_cast< bool* >( this + g_Game::Netvars::m_bSpotted );
 }
 
 bool C_Entity::IsDefusing( ) {
-	return *reinterpret_cast< int* >( this + g_Game::Netvars::m_bIsDefusing );
+	return *reinterpret_cast< bool* >( this + g_Game::Netvars::m_bIsDefusing );
+}
+
+void C_Entity::SetSpotted( bool Value ) {
+	*reinterpret_cast< bool* >( this + g_Game::Netvars::m_bSpotted ) = Value;
 }
 
 void C_Entity::DoJump( ) {

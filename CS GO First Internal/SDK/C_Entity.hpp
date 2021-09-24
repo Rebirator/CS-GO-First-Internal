@@ -19,6 +19,7 @@ public:
 	bool		IsDormant( );
 	bool		IsSpotted( );
 	bool		IsDefusing( );
+	void		SetSpotted( bool Value );
 	void		DoJump( );
 	void		DoAttack1( );
 	void		DoAttack2( );

@@ -8,6 +8,7 @@ class F_Misc : public Singleton< F_Misc >
 {
 public:
 	void BunnyHop( );
+	void RadarHack( );
 };
 
 #endif//__MISC__
