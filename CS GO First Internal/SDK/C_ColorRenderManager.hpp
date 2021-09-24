@@ -5,9 +5,9 @@
 #include "..\Utils\Singleton.hpp"
 #include "C_Entity.hpp"
 
-struct C_ColorRenderDefinition {
+struct S_ColorRenderDefinition {
 	// Reset this address
-	C_ColorRenderDefinition( ) {
+	S_ColorRenderDefinition( ) {
 		memset( this, 0, sizeof( this ) );
 	}
 
@@ -19,7 +19,10 @@ struct C_ColorRenderDefinition {
 
 class C_ColorRenderManager : public Singleton< C_ColorRenderManager > {
 public:
-	void					Set( C_Entity* Entity, BYTE R, BYTE G, BYTE B, float Brightness = 0.0f );
+	bool CanChangeBrightness = true;
+
+	void					Set( C_Entity* Entity, BYTE R, BYTE G, BYTE B );
+	void					Brightness( float Value );
 
 	C_ColorRenderManager*	Get( );
 };

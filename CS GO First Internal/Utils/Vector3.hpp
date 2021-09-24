@@ -12,7 +12,13 @@ public:
 
 	void Init( float X = 0.f, float Y = 0.f, float Z = 0.f );
 
+	Vector3 operator + ( Vector3 a ) { return { x + a.x, y + a.y, z + a.z }; }
+	Vector3 operator - ( Vector3 a ) { return { x - a.x, y - a.y, z - a.z }; }
+	Vector3 operator * ( float a ) { return { x * a, y * a, z * a }; }
+
 	float Distance( Vector3 a, Vector3 b );
+
+	void Normalize( );
 };
 
 #endif//__VECTOR__

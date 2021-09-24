@@ -15,19 +15,31 @@ int C_Entity::GetTeam( ) {
 	return *reinterpret_cast< int* >( this + g_Game::Netvars::m_iTeamNum );
 }
 
-Vector3 C_Entity::GetPosition( ) {
-	return *reinterpret_cast< Vector3* >( this + g_Game::Netvars::m_vecOrigin );
+int C_Entity::GetShotsFired( ) {
+	return *reinterpret_cast< int* >( this + g_Game::Netvars::m_iShotsFired );
 }
 
 int C_Entity::GetCrosshairEntityID( ) {
 	return *reinterpret_cast< int* >( this->Get( g_LocalPlayer ) + g_Game::Netvars::m_iCrosshairId );
 }
 
+Vector3 C_Entity::GetPosition( ) {
+	return *reinterpret_cast< Vector3* >( this + g_Game::Netvars::m_vecOrigin );
+}
+
+Vector3 C_Entity::GetViewAngles( ) {
+	return *reinterpret_cast< Vector3* >( this->Get( g_LocalPlayer ) + g_Game::Netvars::m_vecViewOffset );
+}
+
+Vector3 C_Entity::GetAimPunch( ) {
+	return *reinterpret_cast< Vector3* >( this->Get( g_LocalPlayer ) + g_Game::Netvars::m_aimPunchAngle );
+}
+
 bool C_Entity::IsAlive( ) {
 	if ( !this )
 		return false;
 
-	if ( this->GetTeam( ) != 1 && this->GetHealth( ) > 0 )
+	if ( this->GetHealth( ) > 0 && this->GetTeam( ) )
 		return true;
 
 	return false;
@@ -47,18 +59,6 @@ bool C_Entity::IsDefusing( ) {
 
 void C_Entity::SetSpotted( bool Value ) {
 	*reinterpret_cast< bool* >( this + g_Game::Netvars::m_bSpotted ) = Value;
-}
-
-void C_Entity::DoJump( ) {
-	*reinterpret_cast< BYTE* >( g_Game::ClientDll + g_Game::Signatures::dwForceJump ) = 6;
-}
-
-void C_Entity::DoAttack1( ) {
-	*reinterpret_cast< BYTE* >( g_Game::ClientDll + g_Game::Signatures::dwForceAttack ) = 6;
-}
-
-void C_Entity::DoAttack2( ) {
-	*reinterpret_cast< BYTE* >( g_Game::ClientDll + g_Game::Signatures::dwForceAttack2 ) = 6;
 }
 
 C_Entity* C_Entity::GetByID( short EntityID ) {

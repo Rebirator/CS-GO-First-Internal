@@ -9,12 +9,15 @@ void F_Glow::Glow( ) {
 		C_Entity* Entity = C_Entity::G( ).GetByID( i );
 
 		if ( Entity ) {
-			if ( Entity->GetTeam( ) != g_pLocalEntity->GetTeam( ) )
+			if ( Entity->GetTeam( ) != g_pLocalEntity->GetTeam( ) ) {
 				g_GlowManager->Set( Entity, 1.0f, 0.1f, 0.1f, 0.6f );
-			else
+				g_ColorRenderManager->Set( Entity, 255 - ( BYTE )( Entity->GetHealth( ) * 2.55 ), ( BYTE )( Entity->GetHealth( ) * 2.55 ), 0 );
+			}
+			else {
 				g_GlowManager->Set( Entity, 0.1f, 0.33f, 1.0f, 0.6f );
-
-			g_ColorRenderManager->Set( Entity, 255, 0, 0, 5.0f );
+			}
 		}
 	}
+
+	g_ColorRenderManager->Brightness( 5.0f );
 }

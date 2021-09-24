@@ -1,24 +1,20 @@
 #include "C_ColorRenderManager.hpp"
+#include <iostream>
 
-void C_ColorRenderManager::Set( C_Entity* Entity, BYTE R, BYTE G, BYTE B, float Brightness ) {
-	C_ColorRenderDefinition ColorRender = *reinterpret_cast< C_ColorRenderDefinition* >( Entity + g_Game::Netvars::m_clrRender );
+void C_ColorRenderManager::Set( C_Entity* Entity, BYTE R, BYTE G, BYTE B ) {
+	S_ColorRenderDefinition ColorRender = *reinterpret_cast< S_ColorRenderDefinition* >( Entity + g_Game::Netvars::m_clrRender );
 
 	ColorRender.R = R;
 	ColorRender.G = G;
 	ColorRender.B = B;
 
-	*reinterpret_cast< C_ColorRenderDefinition* >( Entity + g_Game::Netvars::m_clrRender ) = ColorRender;
+	*reinterpret_cast< S_ColorRenderDefinition* >( Entity + g_Game::Netvars::m_clrRender ) = ColorRender;
+}
 
-	if ( Brightness ) {
-		static int CanChangeBrightness = -1;
-
-		if ( !g_pLocalEntity->IsAlive( ) || CanChangeBrightness == -1 )
-			CanChangeBrightness = true;
-
-		if ( CanChangeBrightness && g_pLocalEntity->IsAlive( ) ) {
-			*reinterpret_cast< int* >( this ) = *( int* )&Brightness ^ *reinterpret_cast< int* >( this );
-			CanChangeBrightness = false;
-		}
+void C_ColorRenderManager::Brightness( float Value ) {
+	if ( CanChangeBrightness && g_pLocalEntity->IsAlive( ) ) {
+		*reinterpret_cast< int* >( this ) = *( int* )&Value ^ *reinterpret_cast< int* >( this );
+		CanChangeBrightness = false;
 	}
 }
 

@@ -12,5 +12,6 @@ void Hack( ) {
 		F_Glow::G( ).Glow( );
 		F_Misc::G( ).BunnyHop( );
 		F_Misc::G( ).RadarHack( );
+		F_Misc::G( ).RecoilControlSystem( );
 	}
 }

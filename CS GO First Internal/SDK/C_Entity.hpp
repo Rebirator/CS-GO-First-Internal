@@ -14,22 +14,22 @@ public:
 	int			GetHealth( );
 	int			GetFlags( );
 	int			GetTeam( );
+	int			GetShotsFired( );
+	int			GetCrosshairEntityID( );
 	Vector3		GetPosition( );
+	Vector3		GetViewAngles( );
+	Vector3		GetAimPunch( );
 	bool		IsAlive( );
 	bool		IsDormant( );
 	bool		IsSpotted( );
 	bool		IsDefusing( );
 	void		SetSpotted( bool Value );
-	void		DoJump( );
-	void		DoAttack1( );
-	void		DoAttack2( );
 
 	C_Entity*	GetByID( short EntityID );
-	int			GetCrosshairEntityID( );
 	C_Entity*	GetByCrosshairID( );
 
 	C_Entity*	Get( uintptr Entity );
 	uintptr		Get( );
 };
 
-#endif//__Entity_t__
+#endif//__ENTITY__

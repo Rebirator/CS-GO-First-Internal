@@ -5,9 +5,9 @@
 #include "..\Utils\Singleton.hpp"
 #include "C_Entity.hpp"
 
-struct C_GlowDefinition {
+struct S_GlowDefinition {
 	// Reset this address
-	C_GlowDefinition( ) {
+	S_GlowDefinition( ) {
 		memset( this, 0, sizeof( this ) );
 	}
 
