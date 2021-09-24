@@ -21,6 +21,7 @@ struct C_GlowDefinition {
 	bool WhenOccluded;			// 0x28
 	bool WhenUnOccluded;		// 0x29
 
+	// [UINT] NextFreeSlot		// 0x00
 	// [FLOAT]SomeFloat			// 0x1C
 	// [FLOAT]AnotherFloat		// 0x24
 	// [BOOL] FullBloom			// 0x30
