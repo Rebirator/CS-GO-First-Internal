@@ -165,6 +165,8 @@
     <ClInclude Include="Features\Glow.h" />
     <ClInclude Include="Features\Misc.hpp" />
     <ClInclude Include="Features\TriggerBot.hpp" />
+    <ClInclude Include="Gui\Config.hpp" />
+    <ClInclude Include="Gui\Menu.hpp" />
     <ClInclude Include="Main\Hack.hpp" />
     <ClInclude Include="SDK\C_Client.hpp" />
     <ClInclude Include="SDK\C_Entity.hpp" />
@@ -180,6 +182,7 @@
     <ClCompile Include="Features\Glow.cpp" />
     <ClCompile Include="Features\Misc.cpp" />
     <ClCompile Include="Features\TriggerBot.cpp" />
+    <ClCompile Include="Gui\Menu.cpp" />
     <ClCompile Include="Main\main.cpp" />
     <ClCompile Include="Main\Hack.cpp" />
     <ClCompile Include="SDK\C_Client.cpp" />

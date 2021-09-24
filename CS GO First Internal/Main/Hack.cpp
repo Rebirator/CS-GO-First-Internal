@@ -1,4 +1,5 @@
 #include <Windows.h>
+#include "..\Gui\Menu.hpp"
 #include "..\Features\TriggerBot.hpp"
 #include "..\Features\Misc.hpp"
 #include "..\Features\Glow.h"

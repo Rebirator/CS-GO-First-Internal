@@ -13,6 +13,9 @@
     <Filter Include="Main">
       <UniqueIdentifier>{9ec69465-3953-4c9c-9b12-8d26099bdccb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Gui">
+      <UniqueIdentifier>{a87710c9-0538-445c-a85e-f275d593b201}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SDK\Offsets.hpp">
@@ -54,6 +57,12 @@
     <ClInclude Include="Features\Glow.h">
       <Filter>Features</Filter>
     </ClInclude>
+    <ClInclude Include="Gui\Config.hpp">
+      <Filter>Gui</Filter>
+    </ClInclude>
+    <ClInclude Include="Gui\Menu.hpp">
+      <Filter>Gui</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Features\Misc.cpp">
@@ -85,6 +94,9 @@
     </ClCompile>
     <ClCompile Include="Features\Glow.cpp">
       <Filter>Features</Filter>
+    </ClCompile>
+    <ClCompile Include="Gui\Menu.cpp">
+      <Filter>Gui</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
