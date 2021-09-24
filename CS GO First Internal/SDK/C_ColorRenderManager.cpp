@@ -25,7 +25,3 @@ void C_ColorRenderManager::Set( C_Entity* Entity, BYTE R, BYTE G, BYTE B, float 
 C_ColorRenderManager* C_ColorRenderManager::Get( ) {
 	return reinterpret_cast< C_ColorRenderManager* >( g_Game::EngineDll + g_Game::Signatures::model_ambient_min );
 }
-
-uintptr C_ColorRenderManager::Get( bool thisaddr ) {
-	return *reinterpret_cast< uintptr* >( this );
-}

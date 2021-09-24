@@ -22,7 +22,6 @@ public:
 	void					Set( C_Entity* Entity, BYTE R, BYTE G, BYTE B, float Brightness = 0.0f );
 
 	C_ColorRenderManager*	Get( );
-	uintptr					Get( bool thisaddr );
 };
 
 #endif//__C_COLORRENDERMANAGER__
