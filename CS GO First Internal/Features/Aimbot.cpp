@@ -3,9 +3,6 @@
 #include "..\SDK\C_Weapon.hpp"
 #include "..\Utils\Vector3.hpp"
 #include "..\SDK\C_Client.hpp"
-#include <iostream>
-
-#define PI 3.14159265358
 
 void F_Aimbot::Aimbot( ) {
 	if ( GetAsyncKeyState( VK_RBUTTON ) ) {

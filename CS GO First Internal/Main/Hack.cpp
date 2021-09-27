@@ -10,7 +10,7 @@
 void Hack( ) {
 	if ( g_pLocalPlayer ) {
 		F_Aimbot::G( ).Aimbot( );
-		//F_TriggerBot::G( ).TriggerBot( );
+		F_TriggerBot::G( ).TriggerBot( );
 		F_Glow::G( ).Glow( );
 		F_Misc::G( ).BunnyHop( );
 		F_Misc::G( ).RadarHack( );
