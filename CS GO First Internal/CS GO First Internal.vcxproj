@@ -162,7 +162,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Features\Glow.h" />
+    <ClInclude Include="Features\Aimbot.hpp" />
+    <ClInclude Include="Features\Glow.hpp" />
     <ClInclude Include="Features\Misc.hpp" />
     <ClInclude Include="Features\TriggerBot.hpp" />
     <ClInclude Include="Gui\Config.hpp" />
@@ -180,6 +181,7 @@
     <ClInclude Include="Utils\Vector3.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Features\Aimbot.cpp" />
     <ClCompile Include="Features\Glow.cpp" />
     <ClCompile Include="Features\Misc.cpp" />
     <ClCompile Include="Features\TriggerBot.cpp" />

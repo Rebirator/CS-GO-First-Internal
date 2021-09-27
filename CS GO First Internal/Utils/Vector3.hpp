@@ -15,10 +15,13 @@ public:
 	Vector3 operator + ( Vector3 a ) { return { x + a.x, y + a.y, z + a.z }; }
 	Vector3 operator - ( Vector3 a ) { return { x - a.x, y - a.y, z - a.z }; }
 	Vector3 operator * ( float a ) { return { x * a, y * a, z * a }; }
+	Vector3 operator / ( float a ) { return { x / a, y / a, z / a }; }
 
 	float Distance( Vector3 a, Vector3 b );
+	float DistanceInchs( Vector3 a, Vector3 b );
+	Vector3 CalculateAngles( Vector3 a, Vector3 b );
 
-	void Normalize( );
+	void NormalizeAngles( );
 };
 
 #endif//__VECTOR__

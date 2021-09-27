@@ -27,6 +27,7 @@ public:
 
 	C_Entity*	GetByID( short EntityID );
 	C_Entity*	GetByCrosshairID( );
+	C_Entity*	GetClosestEntity( );
 
 	C_Entity*	Get( uintptr Entity );
 	uintptr		Get( );

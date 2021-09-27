@@ -54,7 +54,7 @@
     <ClInclude Include="SDK\C_GlowManager.hpp">
       <Filter>SDK</Filter>
     </ClInclude>
-    <ClInclude Include="Features\Glow.h">
+    <ClInclude Include="Features\Glow.hpp">
       <Filter>Features</Filter>
     </ClInclude>
     <ClInclude Include="Gui\Config.hpp">
@@ -65,6 +65,9 @@
     </ClInclude>
     <ClInclude Include="SDK\C_ColorRenderManager.hpp">
       <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="Features\Aimbot.hpp">
+      <Filter>Features</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -103,6 +106,9 @@
     </ClCompile>
     <ClCompile Include="SDK\C_ColorRenderManager.cpp">
       <Filter>SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="Features\Aimbot.cpp">
+      <Filter>Features</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

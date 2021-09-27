@@ -73,6 +73,25 @@ C_Entity* C_Entity::GetByCrosshairID( ) {
 	return nullptr;
 }
 
+C_Entity* C_Entity::GetClosestEntity( ) {
+	float ClosestDistance = 0.0f;
+	short ClosestEntID = NULL;
+
+	for ( short i = 1; i < g_Client->GetMaxClients( ); i++ ) {
+		C_Entity* Entity = this->GetByID( i );
+
+		if ( !Entity->IsAlive( ) )
+			continue;
+
+		if ( g_Vector3->Distance( g_pLocalEntity->GetPosition( ), Entity->GetPosition( ) ) < ClosestDistance || ClosestDistance == 0.0f ) {
+			ClosestDistance = g_Vector3->Distance( g_pLocalEntity->GetPosition( ), Entity->GetPosition( ) );
+			ClosestEntID = i;
+		}
+	}
+
+	return this->GetByID( ClosestEntID );
+}
+
 C_Entity* C_Entity::Get( uintptr Entity ) {
 	return *reinterpret_cast< C_Entity** >( Entity );
 }

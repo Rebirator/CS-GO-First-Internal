@@ -27,7 +27,7 @@ void F_Misc::RecoilControlSystem( ) {
 	if ( g_pLocalEntity->GetShotsFired( ) > 1 ) {
 		Vector3 NewAngle = Vector3( g_Client->GetViewAngles( ).x + OldPunch.x - PunchAngle.x, g_Client->GetViewAngles( ).y + OldPunch.y - PunchAngle.y, 0.0f );
 
-		NewAngle.Normalize( );
+		NewAngle.NormalizeAngles( );
 
 		g_Client->SetViewAngles( NewAngle );
 	}

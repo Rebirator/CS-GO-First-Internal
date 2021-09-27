@@ -13,6 +13,7 @@
 #define g_pLocalEntity			C_Entity::G( ).Get( g_LocalPlayer )
 #define g_pLocalWeapon			C_Weapon::G( ).GetWeapon( g_pLocalPlayer )
 
+#define PI 3.14159265358
 #define CS_INCH_TO_METERS( a ) ( ( float )( a * 0.0254f ) )
 
 #define KEY_TOGGLE 1

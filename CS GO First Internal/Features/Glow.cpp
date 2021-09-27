@@ -1,4 +1,4 @@
-#include "Glow.h"
+#include "Glow.hpp"
 #include "..\SDK\C_GlowManager.hpp"
 #include "..\SDK\C_ColorRenderManager.hpp"
 #include "..\SDK\C_Client.hpp"
