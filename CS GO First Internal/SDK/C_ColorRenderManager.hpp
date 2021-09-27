@@ -12,14 +12,14 @@ struct S_ColorRenderDefinition {
 	}
 
 	// Color render struct
-	BYTE R;						// 0x01
-	BYTE G;						// 0x02
-	BYTE B;						// 0x03
+	BYTE r;						// 0x01
+	BYTE g;						// 0x02
+	BYTE b;						// 0x03
 };
 
 class C_ColorRenderManager : public Singleton< C_ColorRenderManager > {
 public:
-	bool CanChangeBrightness = true;
+	bool can_change_brightness = true;
 
 	void					Set( C_Entity* Entity, BYTE R, BYTE G, BYTE B );
 	void					Brightness( float Value );

@@ -6,15 +6,15 @@
 
 void F_Glow::Glow( ) {
 	for ( short i = 1; i < g_Client->GetMaxClients( ); i++ ) {
-		C_Entity* Entity = C_Entity::G( ).GetByID( i );
+		C_Entity* entity = C_Entity::G( ).GetByID( i );
 
-		if ( Entity ) {
-			if ( Entity->GetTeam( ) != g_pLocalEntity->GetTeam( ) ) {
-				g_GlowManager->Set( Entity, 1.0f, 0.1f, 0.1f, 0.6f );
-				g_ColorRenderManager->Set( Entity, ( BYTE )( 255 - Entity->GetHealth( ) * 2.55 ), ( BYTE )( Entity->GetHealth( ) * 2.55 ), 0 );
+		if ( entity->IsAlive( ) ) {
+			if ( entity->GetTeam( ) != g_pLocalEntity->GetTeam( ) ) {
+				g_GlowManager->Set( entity, 1.0f, 0.1f, 0.1f, 0.6f );
+				g_ColorRenderManager->Set( entity, ( BYTE )( 255 - entity->GetHealth( ) * 2.55 ), ( BYTE )( entity->GetHealth( ) * 2.55 ), 0 );
 			}
 			else {
-				g_GlowManager->Set( Entity, 0.1f, 0.33f, 1.0f, 0.6f );
+				g_GlowManager->Set( entity, 0.1f, 0.33f, 1.0f, 0.6f );
 			}
 		}
 	}

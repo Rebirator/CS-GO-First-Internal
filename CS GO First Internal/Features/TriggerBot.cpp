@@ -3,13 +3,12 @@
 #include "..\SDK\C_Weapon.hpp"
 #include "..\Utils\Vector3.hpp"
 #include "..\SDK\C_Client.hpp"
-#include <thread>
 
 void F_TriggerBot::TriggerBot( ) {
-	C_Entity* Entity = C_Entity::G( ).GetByCrosshairID( );
+	C_Entity* entity = C_Entity::G( ).GetByCrosshairID( );
 
-	if ( Entity->IsAlive( ) && Entity->GetTeam( ) != g_pLocalEntity->GetTeam( ) ) {
-		std::chrono::microseconds( ( DWORD )g_Vector3->Distance( g_pLocalEntity->GetPosition( ), Entity->GetPosition( ) ) * 5 );
+	if ( entity->IsAlive( ) && entity->GetTeam( ) != g_pLocalEntity->GetTeam( ) ) {
+		//std::this_thread::sleep_for( std::chrono::milliseconds( ( DWORD )g_Vector3->Distance( g_pLocalEntity->GetPosition( ), entity->GetPosition( ) ) * 5 ) );
 
 		g_Client->DoAttack1( );
 	}

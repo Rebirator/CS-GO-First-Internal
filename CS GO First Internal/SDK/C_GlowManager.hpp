@@ -13,13 +13,13 @@ struct S_GlowDefinition {
 
 	// Glow struct
 	BYTE Buffer1[ 8 ];			// 0x00
-	float R;					// 0x08
-	float G;					// 0x0C
-	float B;					// 0x10
-	float A;					// 0x14
+	float r;					// 0x08
+	float g;					// 0x0C
+	float b;					// 0x10
+	float a;					// 0x14
 	BYTE Buffer2[ 16 ];			// 0x18
-	bool WhenOccluded;			// 0x28
-	bool WhenUnOccluded;		// 0x29
+	bool when_occluded;			// 0x28
+	bool when_unoccluded;		// 0x29
 
 	// [UINT] NextFreeSlot		// 0x00
 	// [FLOAT]SomeFloat			// 0x1C

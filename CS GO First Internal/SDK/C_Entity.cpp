@@ -57,12 +57,12 @@ bool C_Entity::IsDefusing( ) {
 	return *reinterpret_cast< bool* >( this + g_Game::Netvars::m_bIsDefusing );
 }
 
-void C_Entity::SetSpotted( bool Value ) {
-	*reinterpret_cast< bool* >( this + g_Game::Netvars::m_bSpotted ) = Value;
+void C_Entity::SetSpotted( bool value ) {
+	*reinterpret_cast< bool* >( this + g_Game::Netvars::m_bSpotted ) = value;
 }
 
-C_Entity* C_Entity::GetByID( short EntityID ) {
-	return *reinterpret_cast< C_Entity** >( g_Game::ClientDll + g_Game::Signatures::dwEntityList + ( EntityID * 0x10 ) );
+C_Entity* C_Entity::GetByID( short entity_id ) {
+	return *reinterpret_cast< C_Entity** >( g_Game::ClientDll + g_Game::Signatures::dwEntityList + ( entity_id * 0x10 ) );
 }
 
 C_Entity* C_Entity::GetByCrosshairID( ) {
@@ -74,26 +74,26 @@ C_Entity* C_Entity::GetByCrosshairID( ) {
 }
 
 C_Entity* C_Entity::GetClosestEntity( ) {
-	float ClosestDistance = 0.0f;
-	short ClosestEntID = NULL;
+	float closest_distance = 0.0f;
+	short closest_ent_id = NULL;
 
 	for ( short i = 1; i < g_Client->GetMaxClients( ); i++ ) {
-		C_Entity* Entity = this->GetByID( i );
+		C_Entity* entity = this->GetByID( i );
 
-		if ( !Entity->IsAlive( ) )
+		if ( !entity->IsAlive( ) )
 			continue;
 
-		if ( g_Vector3->Distance( g_pLocalEntity->GetPosition( ), Entity->GetPosition( ) ) < ClosestDistance || ClosestDistance == 0.0f ) {
-			ClosestDistance = g_Vector3->Distance( g_pLocalEntity->GetPosition( ), Entity->GetPosition( ) );
-			ClosestEntID = i;
+		if ( g_Vector3->Distance( g_pLocalEntity->GetPosition( ), entity->GetPosition( ) ) < closest_distance || closest_distance == 0.0f ) {
+			closest_distance = g_Vector3->Distance( g_pLocalEntity->GetPosition( ), entity->GetPosition( ) );
+			closest_ent_id = i;
 		}
 	}
 
-	return this->GetByID( ClosestEntID );
+	return this->GetByID( closest_ent_id );
 }
 
-C_Entity* C_Entity::Get( uintptr Entity ) {
-	return *reinterpret_cast< C_Entity** >( Entity );
+C_Entity* C_Entity::Get( uintptr entity ) {
+	return *reinterpret_cast< C_Entity** >( entity );
 }
 
 uintptr C_Entity::Get( ) {

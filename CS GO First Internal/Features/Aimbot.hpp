@@ -4,7 +4,7 @@
 #include "..\Utils\Singleton.hpp"
 #include "..\Utils\Defines.hpp"
 
-class F_Aimbot : public Singleton< F_Aimbot >
+class F_Aimbot
 {
 public:
 	void Aimbot( );

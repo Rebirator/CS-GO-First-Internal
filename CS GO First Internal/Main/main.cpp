@@ -1,6 +1,6 @@
 #include <Windows.h>
 #include <iostream>
-#include <cmath>
+#include <thread>
 #include "..\Main\Hack.hpp"
 #include "..\Utils\Defines.hpp"
 
@@ -8,23 +8,20 @@ DWORD WINAPI HackThread( HMODULE hModule )
 {
     // Console
     AllocConsole( );
-    FILE* F_Console;
-    freopen_s( &F_Console, "CONOUT$", "w", stdout );
+    freopen_s( ( FILE** )stdin, "CONIN$", "r", stdout );
+    freopen_s( ( FILE** )stdin, "CONOUT$", "w", stdout );
 
-    while ( true )
-    {
+    while ( !GetAsyncKeyState( VK_INSERT ) ) {
+        // Cheat
         Hack( );
 
-        if ( GetAsyncKeyState( VK_INSERT ) ) {
-            if ( F_Console )
-                fclose( F_Console );
-            FreeConsole( );
-            FreeLibraryAndExitThread( hModule, 0 );
-            return EXIT_SUCCESS;
-        }
-
-        Sleep( 1 );
+        std::this_thread::sleep_for( std::chrono::milliseconds( 1 ) );
     }
+
+    fclose( stdin );
+    fclose( stdout );
+    FreeConsole( );
+    FreeLibraryAndExitThread( hModule, 0 );
 }
 
 BOOL APIENTRY DllMain( HMODULE hModule,  DWORD  ul_reason_for_call, LPVOID lpReserved )
@@ -33,12 +30,20 @@ BOOL APIENTRY DllMain( HMODULE hModule,  DWORD  ul_reason_for_call, LPVOID lpRes
     {
     case DLL_PROCESS_ATTACH:
     {
-        CloseHandle( CreateThread( nullptr, 0, ( LPTHREAD_START_ROUTINE )HackThread, hModule, 0, nullptr ) );
+        HANDLE h_thread = CreateThread( nullptr, 0, ( LPTHREAD_START_ROUTINE )HackThread, hModule, 0, nullptr );
+        if ( h_thread )
+            CloseHandle( h_thread );
     }
     case DLL_THREAD_ATTACH:
     case DLL_THREAD_DETACH:
     case DLL_PROCESS_DETACH:
         break;
     }
+
+    // shutting up the compiler
+    LPVOID lpReserv = lpReserved;
+    delete lpReserv;
+
+    // ret
     return TRUE;
 }

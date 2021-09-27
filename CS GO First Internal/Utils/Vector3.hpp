@@ -22,6 +22,7 @@ public:
 	Vector3 CalculateAngles( Vector3 a, Vector3 b );
 
 	void NormalizeAngles( );
+	Vector3 NormalizeAngles( Vector3 angles );
 };
 
 #endif//__VECTOR__

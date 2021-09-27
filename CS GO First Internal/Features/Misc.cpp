@@ -13,23 +13,27 @@ void F_Misc::BunnyHop( ) {
 
 void F_Misc::RadarHack( ) {
 	for ( short i = 1; i < g_Client->GetMaxClients( ); i++ ) {
-		C_Entity* Entity = C_Entity::G( ).GetByID( i );
+		C_Entity* entity = C_Entity::G( ).GetByID( i );
 
-		if ( Entity && !Entity->IsSpotted( ) && Entity->GetTeam( ) != g_pLocalEntity->GetTeam( ) ) {
-			Entity->SetSpotted( true );
+		if ( entity && !entity->IsSpotted( ) && entity->GetTeam( ) != g_pLocalEntity->GetTeam( ) ) {
+			entity->SetSpotted( true );
 		}
 	}
 }
 
 void F_Misc::RecoilControlSystem( ) {
-	Vector3 PunchAngle = g_pLocalEntity->GetAimPunch( ) * 2.1f;
+	static Vector3 old_punch;
+	Vector3 punch_angle = g_pLocalEntity->GetAimPunch( ) * 2.1f;
 
 	if ( g_pLocalEntity->GetShotsFired( ) > 1 ) {
-		Vector3 NewAngle = Vector3( g_Client->GetViewAngles( ).x + OldPunch.x - PunchAngle.x, g_Client->GetViewAngles( ).y + OldPunch.y - PunchAngle.y, 0.0f );
-
-		NewAngle.NormalizeAngles( );
-
-		g_Client->SetViewAngles( NewAngle );
+		g_Client->SetViewAngles( 
+			g_Vector3->NormalizeAngles( 
+				Vector3( 
+					g_Client->GetViewAngles( ).x + old_punch.x - punch_angle.x, g_Client->GetViewAngles( ).y + old_punch.y - punch_angle.y, 0.0f 
+				) 
+			) 
+		);
 	}
-	OldPunch = PunchAngle;
+
+	old_punch = punch_angle;
 }

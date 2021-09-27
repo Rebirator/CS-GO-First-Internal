@@ -6,21 +6,20 @@
 
 void F_Aimbot::Aimbot( ) {
 	if ( GetAsyncKeyState( VK_RBUTTON ) ) {
-		C_Entity* Entity = C_Entity::G( ).GetClosestEntity( );
+		C_Entity* entity = C_Entity::G( ).GetClosestEntity( );
 
-		if ( !Entity->IsAlive( ) || Entity->GetTeam( ) == g_pLocalEntity->GetTeam( ) )
+		if ( !entity->IsAlive( ) || entity->GetTeam( ) == g_pLocalEntity->GetTeam( ) )
 			return;
 
-		Vector3 LocalPos = g_pLocalEntity->GetPosition( );
-		Vector3 EnemyPos = Entity->GetPosition( );
+		Vector3 aim_angles = g_Vector3->CalculateAngles( g_pLocalEntity->GetPosition( ), entity->GetPosition( ) );
+		Vector3 diff_smoothed = ( aim_angles - g_Client->GetViewAngles( ) ) / 40;
 
-		Vector3 AimAngles = g_Vector3->CalculateAngles( LocalPos, EnemyPos );
-		Vector3 DiffAimAngles = AimAngles - g_Client->GetViewAngles( );
-		Vector3 DiffAimAnglesSmoothed = DiffAimAngles / 40;
-		Vector3 NewAngles = Vector3( g_Client->GetViewAngles( ).x + DiffAimAnglesSmoothed.x, g_Client->GetViewAngles( ).y + DiffAimAnglesSmoothed.y, 0.0f );
-
-		NewAngles.NormalizeAngles( );
-
-		g_Client->SetViewAngles( NewAngles );
+		g_Client->SetViewAngles( 
+			g_Vector3->NormalizeAngles( 
+				Vector3( 
+					g_Client->GetViewAngles( ).x + diff_smoothed.x, g_Client->GetViewAngles( ).y + diff_smoothed.y, 0.0f 
+				) 
+			) 
+		);
 	}
 }

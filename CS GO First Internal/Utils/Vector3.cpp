@@ -9,7 +9,7 @@ Vector3::Vector3( float X, float Y, float Z ) {
 }
 
 Vector3::Vector3( void ) {
-	Vector3::Init( );
+	Vector3::Init( 0.0f, 0.0f, 0.0f );
 };
 
 void Vector3::Init( float X, float Y, float Z ) {
@@ -25,25 +25,34 @@ float Vector3::Distance( Vector3 a, Vector3 b ) {
 }
 
 float Vector3::DistanceInchs( Vector3 a, Vector3 b ) {
-	return sqrt( pow( a.x - b.x, 2) + pow( a.y - b.y, 2) + pow( a.z - b.z, 2) );
+	return ( float )( sqrt( pow( a.x - b.x, 2) + pow( a.y - b.y, 2) + pow( a.z - b.z, 2) ) );
 }
 
 Vector3 Vector3::CalculateAngles( Vector3 a, Vector3 b ) {
-	Vector3 Delta = b - a;
-	double Hypotenuse = this->DistanceInchs( b, a );
+	Vector3 delta = b - a;
+	double hypotenuse = this->DistanceInchs( b, a );
 
-	double Pitch = -atan2( Delta.z, Hypotenuse ) * ( 180 / PI );
-	double Yaw = atan2( Delta.y, Delta.x ) * ( 180 / PI );
+	double pitch = -atan2( delta.z, hypotenuse ) * ( 180 / PI );
+	double yaw = atan2( delta.y, delta.x ) * ( 180 / PI );
 
-	Vector3 Angles = Vector3( ( float )Pitch, ( float )Yaw, 0.0f );
-	Angles.NormalizeAngles( );
+	Vector3 angles = Vector3( ( float )pitch, ( float )yaw, 0.0f );
+	angles.NormalizeAngles( );
 
-	return Vector3( Angles );
+	return Vector3( angles );
 }
 
 void Vector3::NormalizeAngles( ) {
-	while ( y < -180 ) y += 360;
-	while ( y > 180 ) y -= 360;
-	if ( x < -89 ) y = -89;
+	while ( y < -180 ) y = -180;
+	while ( y > 180 ) y = 180;
+	if ( x < -89 ) x = -89;
 	if ( x > 89 ) x = 89;
+}
+
+Vector3 Vector3::NormalizeAngles( Vector3 angles ) {
+	while ( angles.y < -180 ) angles.y = -180;
+	while ( angles.y > 180 ) angles.y = 180;
+	if ( angles.x < -89 ) angles.x = -89;
+	if ( angles.x > 89 ) angles.x = 89;
+
+	return angles;
 }
