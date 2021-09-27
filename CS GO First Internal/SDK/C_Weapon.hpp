@@ -14,10 +14,4 @@ public:
 	uintptr		Get( );
 };
 
-enum {
-	CS_WEAPON_DESERTEAGLE = 1,
-	CS_WEAPON_DUALBERETTAS = 2,
-
-};
-
 #endif//__WEAPON__
