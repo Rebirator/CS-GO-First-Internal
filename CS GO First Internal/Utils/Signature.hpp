@@ -1,5 +1,5 @@
-#ifndef __SIGNATURE_SCANNED__
-#define __SIGNATURE_SCANNED__
+#ifndef __SIGNATURE__
+#define __SIGNATURE__
 
 #include <Windows.h>
 #include <Psapi.h>
@@ -16,4 +16,4 @@ private:
 	BYTE* GetData( uintptr begin, size_t size );
 };
 
-#endif//__SIGNATURE_SCANNED__
+#endif//__SIGNATURE__
