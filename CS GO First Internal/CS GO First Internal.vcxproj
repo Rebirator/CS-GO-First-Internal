@@ -73,7 +73,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)Output\$(Configuration)\</OutDir>
-    <IntDir>OBJ\$(Configuration)\</IntDir>
+    <IntDir>$(SolutionDir)OBJ\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -177,6 +177,7 @@
     <ClInclude Include="SDK\Offsets.hpp" />
     <ClInclude Include="SDK\C_Weapon.hpp" />
     <ClInclude Include="Utils\Defines.hpp" />
+    <ClInclude Include="Utils\Signature.hpp" />
     <ClInclude Include="Utils\Singleton.hpp" />
     <ClInclude Include="Utils\Vector3.hpp" />
   </ItemGroup>
@@ -193,6 +194,7 @@
     <ClCompile Include="SDK\C_Entity.cpp" />
     <ClCompile Include="SDK\C_GlowManager.cpp" />
     <ClCompile Include="SDK\C_Weapon.cpp" />
+    <ClCompile Include="Utils\Signature.cpp" />
     <ClCompile Include="Utils\Vector3.cpp" />
   </ItemGroup>
   <ItemGroup>

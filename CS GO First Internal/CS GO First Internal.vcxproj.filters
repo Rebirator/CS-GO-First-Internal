@@ -69,6 +69,9 @@
     <ClInclude Include="Features\Aimbot.hpp">
       <Filter>Features</Filter>
     </ClInclude>
+    <ClInclude Include="Utils\Signature.hpp">
+      <Filter>Utils</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Features\Misc.cpp">
@@ -109,6 +112,9 @@
     </ClCompile>
     <ClCompile Include="Features\Aimbot.cpp">
       <Filter>Features</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\Signature.cpp">
+      <Filter>Utils</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

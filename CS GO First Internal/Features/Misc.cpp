@@ -1,7 +1,10 @@
+#include <Windows.h>
 #include "Misc.hpp"
 #include "..\SDK\C_Entity.hpp"
 #include "..\SDK\C_Client.hpp"
 #include <iostream>
+#include <Psapi.h>
+#include <vector>
 
 void F_Misc::BunnyHop( ) {
 	if ( GetAsyncKeyState( VK_SPACE ) ) {
