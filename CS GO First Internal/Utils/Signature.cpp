@@ -9,6 +9,7 @@ uintptr Signature::Scan( const wchar_t* module_t, std::vector< int > signature, 
             if ( data[ buf_addr + sig_id ] != signature.at( sig_id ) && signature.at( sig_id ) != -1 )
                 break;
             else if ( sig_id == signature.size( ) - 1 ) {
+                delete[ ] data;
                 return relative ? 
                     *reinterpret_cast< uintptr* >( begin + buf_addr + offset ) + extra - begin :
                     *reinterpret_cast< uintptr* >( begin + buf_addr + offset ) + extra;
@@ -27,6 +28,8 @@ std::tuple< uintptr, size_t > Signature::GetModuleInfo( const wchar_t* module_t 
 
     MODULEINFO module_info = ( MODULEINFO )NULL;
     GetModuleInformation( GetCurrentProcess( ), h_module, &module_info, sizeof( MODULEINFO ) );
+
+    CloseHandle( h_module );
 
     return { 
         ( uintptr )module_info.lpBaseOfDll, 
