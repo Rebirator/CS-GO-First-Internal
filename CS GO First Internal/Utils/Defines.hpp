@@ -7,7 +7,7 @@
 #define g_GlowManager			C_GlowManager::G( ).Get( )
 #define g_ColorRenderManager	C_ColorRenderManager::G( ).Get( )
 #define g_Vector3				Vector3::pG( )
-#define g_Signature				Signature::pG( )
+#define g_Module				Module::pG( )
 
 #define g_LocalPlayer			g_Game::ClientDll + g_Game::Signatures::dwLocalPlayer
 #define g_pLocalPlayer			*reinterpret_cast< uintptr* >( g_Game::ClientDll + g_Game::Signatures::dwLocalPlayer )
