@@ -2,14 +2,13 @@
 #define __ENTITY__
 
 #include "Offsets.hpp"
-#include "..\Utils\Singleton.hpp"
 #include "..\Utils\Vector3.hpp"
 #include "C_Weapon.hpp"
 
-class C_Entity : public Singleton< C_Entity >
+class C_Entity
 {
 public:
-	C_Entity( void ) { };
+	C_Entity( ) { };
 
 	int			GetHealth( );
 	int			GetFlags( );
@@ -29,8 +28,8 @@ public:
 	C_Entity*	GetByCrosshairID( );
 	C_Entity*	GetClosestEntity( );
 
-	C_Entity*	Get( uintptr Entity );
-	uintptr		Get( );
-};
+	C_Entity*	Get( uintptr_t Entity );
+	uintptr_t		Get( );
+}; extern C_Entity g_entity;
 
 #endif//__ENTITY__

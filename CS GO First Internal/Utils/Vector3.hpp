@@ -1,14 +1,12 @@
 #ifndef __VECTOR__
 #define __VECTOR__
 
-#include "Singleton.hpp"
-
-class Vector3 : public _Singleton_< Vector3 > {
+class Vector3 {
 public:
 	float x, y, z;
 
-	Vector3( void );
-	Vector3( float X, float Y, float Z );
+	Vector3( );
+	Vector3( float x, float y, float z );
 
 	void Init( float X = 0.f, float Y = 0.f, float Z = 0.f );
 
@@ -23,6 +21,6 @@ public:
 
 	void NormalizeAngles( );
 	Vector3 NormalizeAngles( Vector3 angles );
-};
+}; extern Vector3 g_vector3;
 
 #endif//__VECTOR__

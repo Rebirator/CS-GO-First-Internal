@@ -2,20 +2,4 @@
 // (например, имена функций и макросов).
 // Дополнительные сведения: https://go.microsoft.com/fwlink/?linkid=865984
 
-#define uintptr
-
-#define g_Client
-#define g_GlowManager
-#define g_ColorRenderManager
-#define g_Vector3
-
-#define g_LocalPlayer
-#define g_pLocalPlayer
-#define g_pLocalEntity
-#define g_pLocalWeapon
-
 #define CS_INCH_TO_METERS( a )
-
-#define KEY_TOGGLE
-#define KEY_UNHOLD
-#define KEY_HOLD

@@ -2,10 +2,9 @@
 #define __CLIENT__
 
 #include "Offsets.hpp"
-#include "..\Utils\Singleton.hpp"
 #include "..\Utils\Vector3.hpp"
 
-class C_Client : public Singleton< C_Client > {
+class C_Client {
 public:
 	char*		GetMapName( );
 	char*		GetMapDirectory();
@@ -16,8 +15,6 @@ public:
 	void		DoJump( );
 	void		DoAttack1( );
 	void		DoAttack2( );
-
-	C_Client*	Get( );
-};
+}; extern C_Client g_client;
 
 #endif//__CLIENT__

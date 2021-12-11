@@ -1,20 +1,23 @@
-#ifndef __UTIL_MODULE__
-#define __UTIL_MODULE__
+#ifndef __UTILS_MODULE__
+#define __UTILS_MODULE__
 
 #include <Windows.h>
 #include <Psapi.h>
 #include <vector>
 #include <string>
-#include "Singleton.hpp"
 #include "Defines.hpp"
 
-class Module : public Singleton< Module > {
+class Module {
 public:
-	uintptr Scan( const wchar_t* module_t, const std::string signature, int offset = 0, int extra = 0, bool relative = true );
-	uintptr ScanFast( const wchar_t* module_t, const std::string signature, int offset = 0, int extra = 0, bool relative = true );
-
-	std::tuple< uintptr, size_t > GetInfo( const wchar_t* module_t );
 	std::vector< BYTE > Convert( const std::string &signature );
-};
+	uintptr_t Scan( const char* module_t, const std::string signature, int extra = 0, bool relative = true );
 
-#endif//__UTIL_MODULE__
+	struct PE_Info {
+		uintptr_t m_base;
+		uintptr_t m_size;
+
+		PE_Info( const char* module_t );
+	};
+}; extern Module g_module;
+
+#endif//__UTILS_MODULE__

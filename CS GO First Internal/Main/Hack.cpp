@@ -9,20 +9,15 @@
 #include "..\SDK\Offsets.hpp"
 
 void Hack( ) {
-	F_Aimbot aimbot;
-	F_TriggerBot trigger_bot;
-	F_Glow glow;
-	F_Misc misc;
-
 	if ( g_pLocalPlayer ) {
-		aimbot.Aimbot( );
+		g_aimbot.Aimbot( );
 
-		trigger_bot.TriggerBot( );
+		g_triggerbot.TriggerBot( );
 
-		glow.Glow( );
+		g_glow.Glow( );
 
-		misc.BunnyHop( );
-		misc.RadarHack( );
-		misc.RecoilControlSystem( );
+		g_misc.BunnyHop( );
+		g_misc.RadarHack( );
+		g_misc.RecoilControlSystem( );
 	}
 }

@@ -42,9 +42,6 @@
     <ClInclude Include="Main\Hack.hpp">
       <Filter>Main</Filter>
     </ClInclude>
-    <ClInclude Include="Utils\Singleton.hpp">
-      <Filter>Utils</Filter>
-    </ClInclude>
     <ClInclude Include="SDK\C_Weapon.hpp">
       <Filter>SDK</Filter>
     </ClInclude>
@@ -72,6 +69,7 @@
     <ClInclude Include="Utils\Module.hpp">
       <Filter>Utils</Filter>
     </ClInclude>
+    <ClInclude Include="Utils\Pad.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Features\Misc.cpp">
@@ -86,7 +84,7 @@
     <ClCompile Include="Main\Hack.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="Main\main.cpp">
+    <ClCompile Include="Main\dllmain.cpp">
       <Filter>Main</Filter>
     </ClCompile>
     <ClCompile Include="Utils\Vector3.cpp">
@@ -118,6 +116,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="SDK\cpp.hint" />
+    <None Include="cpp.hint" />
   </ItemGroup>
 </Project>

@@ -1,23 +1,22 @@
 #include "C_GlowManager.hpp"
 #include <iostream>
 
+C_GlowManager g_glow_manager { };
+
 void C_GlowManager::Set( C_Entity* entity, float r, float g, float b, float a ) {
-	S_GlowDefinition glow = *reinterpret_cast< S_GlowDefinition* >( this + ( C_GlowManager::G( ).GetIndex( entity ) * 0x38 ) );
+	C_GlowManager* glow_object_manager = *reinterpret_cast< C_GlowManager** >( g_Game::ClientDll + g_Game::Signatures::dwGlowObjectManager );
+	GlowDefinition_t glow = *reinterpret_cast< GlowDefinition_t* >( glow_object_manager + ( g_glow_manager.GetIndex( entity ) * 0x38 ) );
 
-	glow.r = r;
-	glow.g = g;
-	glow.b = b;
-	glow.a = a;
-	glow.when_occluded = true;
-	glow.when_unoccluded = false;
+	glow.m_r = r;
+	glow.m_g = g;
+	glow.m_b = b;
+	glow.m_a = a;
+	glow.m_when_occluded = true;
+	glow.m_when_unoccluded = false;
 
-	*reinterpret_cast< S_GlowDefinition* >( this + ( C_GlowManager::G( ).GetIndex( entity ) * 0x38 ) ) = glow;
+	*reinterpret_cast< GlowDefinition_t* >( glow_object_manager + ( g_glow_manager.GetIndex( entity ) * 0x38 ) ) = glow;
 }
 
-uintptr C_GlowManager::GetIndex( C_Entity* entity ) {
-	return *reinterpret_cast< uintptr* >( entity + g_Game::Netvars::m_iGlowIndex );
-}
-
-C_GlowManager* C_GlowManager::Get( ) {
-	return *reinterpret_cast< C_GlowManager** >( g_Game::ClientDll + g_Game::Signatures::dwGlowObjectManager );
+uintptr_t C_GlowManager::GetIndex( C_Entity* entity ) {
+	return *reinterpret_cast< uintptr_t* >( entity + g_Game::Netvars::m_iGlowIndex );
 }

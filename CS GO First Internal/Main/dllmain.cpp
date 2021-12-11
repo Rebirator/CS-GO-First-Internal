@@ -5,17 +5,16 @@
 #include "..\Utils\Defines.hpp"
 #include "..\SDK\Offsets.hpp"
 #include "..\Utils\Module.hpp"
-
-DWORD WINAPI HackThread( HMODULE hModule )
-{
+    
+DWORD WINAPI HackThread( void* h_module ) {
     // Console
     AllocConsole( );
     freopen_s( ( FILE** )stdin, "CONIN$", "r", stdout );
-    freopen_s( ( FILE** )stdin, "CONOUT$", "w", stdout );
+    freopen_s( ( FILE** )stdout, "CONOUT$", "w", stdout );
 
     auto start_time = std::chrono::system_clock::now( );
 
-    uintptr sig_test = g_Module->Scan( L"client.dll", "89 0D ? ? ? ? 8B 0D ? ? ? ? 8B F2 8B C1 83 CE 04", 2 );
+    uintptr_t sig_test = g_module.Scan( "client.dll", "89 0D ? ? ? ? 8B 0D ? ? ? ? 8B F2 8B C1 83 CE 04", 2 );
     std::cout << std::hex << std::uppercase << "dwForceAttack offset: 0x" << sig_test << std::endl;
 
     auto end_time = std::chrono::system_clock::now( );
@@ -33,29 +32,15 @@ DWORD WINAPI HackThread( HMODULE hModule )
     fclose( stdin );
     fclose( stdout );
     FreeConsole( );
-    FreeLibraryAndExitThread( hModule, 0 );
+    FreeLibraryAndExitThread( static_cast< HMODULE >( h_module ), EXIT_SUCCESS );
 }
 
-BOOL APIENTRY DllMain( HMODULE hModule,  DWORD  ul_reason_for_call, LPVOID lpReserved )
-{
-    switch ( ul_reason_for_call )
-    {
-    case DLL_PROCESS_ATTACH:
-    {
-        HANDLE h_thread = CreateThread( nullptr, 0, ( LPTHREAD_START_ROUTINE )HackThread, hModule, 0, nullptr );
+BOOL APIENTRY DllMain( HMODULE self, DWORD ul_reason_for_call, LPVOID lp_reserved ) {
+    if ( ul_reason_for_call == DLL_PROCESS_ATTACH ) {
+        HANDLE h_thread = CreateThread( nullptr, 0, &HackThread, self, 0, nullptr );
         if ( h_thread )
             CloseHandle( h_thread );
     }
-    case DLL_THREAD_ATTACH:
-    case DLL_THREAD_DETACH:
-    case DLL_PROCESS_DETACH:
-        break;
-    }
 
-    // shutting up the compiler
-    LPVOID lpReserv = lpReserved;
-    delete lpReserv;
-
-    // ret
     return TRUE;
 }

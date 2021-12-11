@@ -2,20 +2,22 @@
 #include "Vector3.hpp"
 #include "Defines.hpp"
 
-Vector3::Vector3( float X, float Y, float Z ) {
-	this->x = X;
-	this->y = Y;
-	this->z = Z;
+Vector3 g_vector3 { };
+
+Vector3::Vector3( ) {
+	Vector3::Init( 0.0f, 0.0f, 0.0f );
+}
+	
+Vector3::Vector3( float x, float y, float z ) {
+	this->x = x;
+	this->y = y;
+	this->z = z;
 }
 
-Vector3::Vector3( void ) {
-	Vector3::Init( 0.0f, 0.0f, 0.0f );
-};
-
-void Vector3::Init( float X, float Y, float Z ) {
-	this->x = X;
-	this->y = Y;
-	this->z = Z;
+void Vector3::Init( float x, float y, float z ) {
+	this->x = x;
+	this->y = y;
+	this->z = z;
 }
 
 float Vector3::Distance( Vector3 a, Vector3 b ) {
@@ -42,10 +44,10 @@ Vector3 Vector3::CalculateAngles( Vector3 a, Vector3 b ) {
 }
 
 void Vector3::NormalizeAngles( ) {
-	while ( y < -180 ) y = -180;
-	while ( y > 180 ) y = 180;
-	if ( x < -89 ) x = -89;
-	if ( x > 89 ) x = 89;
+	while ( this->y < -180 ) this->y = -180;
+	while ( this->y > 180 ) this->y = 180;
+	if ( this->x < -89 ) this->x = -89;
+	if ( this->x > 89 ) this->x = 89;
 }
 
 Vector3 Vector3::NormalizeAngles( Vector3 angles ) {

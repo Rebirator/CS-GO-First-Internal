@@ -3,6 +3,8 @@
 #include "C_Weapon.hpp"
 #include "C_Client.hpp"
 
+C_Entity g_entity { };
+
 int C_Entity::GetHealth( ) {
 	return *reinterpret_cast< int* >( this + g_Game::Netvars::m_iHealth );
 }
@@ -66,10 +68,9 @@ C_Entity* C_Entity::GetByID( short entity_id ) {
 }
 
 C_Entity* C_Entity::GetByCrosshairID( ) {
-	if ( this->GetCrosshairEntityID( ) > 0 && this->GetCrosshairEntityID( ) <= g_Client->GetMaxClients( ) )
+	if ( this->GetCrosshairEntityID( ) > 0 && this->GetCrosshairEntityID( ) <= g_client.GetMaxClients( ) )
 		return *reinterpret_cast< C_Entity** >( g_Game::ClientDll + g_Game::Signatures::dwEntityList +
 											  ( ( this->GetCrosshairEntityID( ) - 1 ) * 0x10 ) );
-
 	return nullptr;
 }
 
@@ -77,14 +78,14 @@ C_Entity* C_Entity::GetClosestEntity( ) {
 	float closest_distance = 0.0f;
 	short closest_ent_id = NULL;
 
-	for ( short i = 1; i < g_Client->GetMaxClients( ); i++ ) {
+	for ( short i = 1; i < g_client.GetMaxClients( ); i++ ) {
 		C_Entity* entity = this->GetByID( i );
 
 		if ( !entity->IsAlive( ) )
 			continue;
 
-		if ( g_Vector3->Distance( g_pLocalEntity->GetPosition( ), entity->GetPosition( ) ) < closest_distance || closest_distance == 0.0f ) {
-			closest_distance = g_Vector3->Distance( g_pLocalEntity->GetPosition( ), entity->GetPosition( ) );
+		if ( g_vector3.Distance( g_pLocalEntity->GetPosition( ), entity->GetPosition( ) ) < closest_distance || closest_distance == 0.0f ) {
+			closest_distance = g_vector3.Distance( g_pLocalEntity->GetPosition( ), entity->GetPosition( ) );
 			closest_ent_id = i;
 		}
 	}
@@ -92,10 +93,10 @@ C_Entity* C_Entity::GetClosestEntity( ) {
 	return this->GetByID( closest_ent_id );
 }
 
-C_Entity* C_Entity::Get( uintptr entity ) {
+C_Entity* C_Entity::Get( uintptr_t entity ) {
 	return *reinterpret_cast< C_Entity** >( entity );
 }
 
-uintptr C_Entity::Get( ) {
-	return reinterpret_cast< uintptr >( this );
+uintptr_t C_Entity::Get( ) {
+	return reinterpret_cast< uintptr_t >( this );
 }
