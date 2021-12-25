@@ -3,12 +3,13 @@
 #include "..\SDK\C_ColorRenderManager.hpp"
 #include "..\SDK\C_Client.hpp"
 #include "..\SDK\C_Entity.hpp"
+#include "..\SDK\Interfaces.hpp"
 
 F_Glow g_glow { };
 
 void F_Glow::Glow( ) {
-	for ( short i = 1; i < g_client.GetMaxClients( ); i++ ) {
-		C_Entity* entity = g_entity.GetByID( i );
+	for ( short i = 1; i < g_interfaces.p_client_entitylist->GetHighestEntityIndex( ); i++ ) {
+		C_Entity* entity = g_interfaces.p_client_entitylist->GetClientEntity( i );
 
 		if ( entity->IsAlive( ) ) {
 			if ( entity->GetTeam( ) != g_pLocalEntity->GetTeam( ) ) {

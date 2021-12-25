@@ -73,12 +73,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)Output\$(Configuration)\</OutDir>
-    <IntDir>$(SolutionDir)OBJ\$(Configuration)\</IntDir>
+    <IntDir>$(SolutionDir)Output\Intermediate\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)Output\$(Configuration)\</OutDir>
-    <IntDir>OBJ\$(Configuration)\</IntDir>
+    <IntDir>$(SolutionDir)Output\Intermediate\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -171,16 +171,22 @@
     <ClInclude Include="Gui\Config.hpp" />
     <ClInclude Include="Gui\Menu.hpp" />
     <ClInclude Include="Main\Hack.hpp" />
+    <ClInclude Include="Main\Init.hpp" />
+    <ClInclude Include="SDK\Interfaces.hpp" />
     <ClInclude Include="SDK\C_Client.hpp" />
     <ClInclude Include="SDK\C_ColorRenderManager.hpp" />
     <ClInclude Include="SDK\C_Entity.hpp" />
     <ClInclude Include="SDK\C_GlowManager.hpp" />
     <ClInclude Include="SDK\Hazedumper.hpp" />
+    <ClInclude Include="SDK\Interfaces\IClientEntityList.hpp" />
+    <ClInclude Include="SDK\Interfaces\IClientNetworkable.hpp" />
+    <ClInclude Include="SDK\Interfaces\IClientUnknown.hpp" />
     <ClInclude Include="SDK\Offsets.hpp" />
     <ClInclude Include="SDK\C_Weapon.hpp" />
     <ClInclude Include="Utils\Defines.hpp" />
     <ClInclude Include="Utils\Module.hpp" />
     <ClInclude Include="Utils\Pad.hpp" />
+    <ClInclude Include="Utils\Strings.hpp" />
     <ClInclude Include="Utils\Vector3.hpp" />
   </ItemGroup>
   <ItemGroup>
@@ -191,11 +197,13 @@
     <ClCompile Include="Gui\Menu.cpp" />
     <ClCompile Include="Main\dllmain.cpp" />
     <ClCompile Include="Main\Hack.cpp" />
+    <ClCompile Include="Main\Init.cpp" />
     <ClCompile Include="SDK\C_Client.cpp" />
     <ClCompile Include="SDK\C_ColorRenderManager.cpp" />
     <ClCompile Include="SDK\C_Entity.cpp" />
     <ClCompile Include="SDK\C_GlowManager.cpp" />
     <ClCompile Include="SDK\C_Weapon.cpp" />
+    <ClCompile Include="SDK\Interfaces.cpp" />
     <ClCompile Include="Utils\Module.cpp" />
     <ClCompile Include="Utils\Vector3.cpp" />
   </ItemGroup>

@@ -26,14 +26,11 @@ uintptr_t Module::Scan( const char* module_t, const std::string signature, int e
 
     std::vector< BYTE > sig = Convert( signature );
 
-    for ( uintptr_t cur_addr = mod_info.m_base; cur_addr < mod_info.m_base + mod_info.m_size - sig.size( ); cur_addr++ )
-    {
-        for ( size_t sig_id = 0; sig_id < sig.size( ); sig_id++ )
-        {
+    for ( uintptr_t cur_addr = mod_info.m_base; cur_addr < mod_info.m_base + mod_info.m_size - sig.size( ); cur_addr++ ) {
+        for ( size_t sig_id = 0; sig_id < sig.size( ); sig_id++ ) {
             if ( *reinterpret_cast< BYTE* >( cur_addr + sig_id ) != sig.at( sig_id ) && sig.at( sig_id ) != 0 )
                 break;
-            else if ( sig_id == sig.size( ) - 1 )
-            {
+            else if ( sig_id == sig.size( ) - 1 ) {
                 return relative ?
                     *reinterpret_cast< uintptr_t* >( cur_addr ) + extra - mod_info.m_base :
                     *reinterpret_cast< uintptr_t* >( cur_addr ) + extra;

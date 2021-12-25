@@ -70,6 +70,12 @@
       <Filter>Utils</Filter>
     </ClInclude>
     <ClInclude Include="Utils\Pad.hpp" />
+    <ClInclude Include="SDK\Interfaces\IClientEntityList.hpp" />
+    <ClInclude Include="SDK\Interfaces\IClientNetworkable.hpp" />
+    <ClInclude Include="SDK\Interfaces\IClientUnknown.hpp" />
+    <ClInclude Include="SDK\Interfaces.hpp" />
+    <ClInclude Include="Main\Init.hpp" />
+    <ClInclude Include="Utils\Strings.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Features\Misc.cpp">
@@ -114,6 +120,8 @@
     <ClCompile Include="Utils\Module.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
+    <ClCompile Include="Main\Init.cpp" />
+    <ClCompile Include="SDK\Interfaces.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />

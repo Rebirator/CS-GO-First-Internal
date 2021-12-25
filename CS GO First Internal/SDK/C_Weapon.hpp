@@ -10,7 +10,7 @@ public:
 	int			GetID( );
 	C_Weapon*	GetEntity( uintptr_t pEntityWeapon );
 	C_Weapon*	GetWeapon( uintptr_t pEntity );
-	uintptr_t		Get( );
+	uintptr_t	Get( );
 }; extern C_Weapon g_weapon;
 
 #endif//__WEAPON__
