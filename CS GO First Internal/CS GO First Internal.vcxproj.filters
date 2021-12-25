@@ -75,7 +75,6 @@
     <ClInclude Include="SDK\Interfaces\IClientUnknown.hpp" />
     <ClInclude Include="SDK\Interfaces.hpp" />
     <ClInclude Include="Main\Init.hpp" />
-    <ClInclude Include="Utils\Strings.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Features\Misc.cpp">

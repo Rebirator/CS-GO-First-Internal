@@ -186,7 +186,6 @@
     <ClInclude Include="Utils\Defines.hpp" />
     <ClInclude Include="Utils\Module.hpp" />
     <ClInclude Include="Utils\Pad.hpp" />
-    <ClInclude Include="Utils\Strings.hpp" />
     <ClInclude Include="Utils\Vector3.hpp" />
   </ItemGroup>
   <ItemGroup>

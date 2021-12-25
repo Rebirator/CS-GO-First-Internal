@@ -3,7 +3,6 @@
 
 #include <Windows.h>
 #include <iostream>
-#include "../Utils/Strings.hpp"
 #include "Interfaces/IClientUnknown.hpp"
 #include "Interfaces/IClientNetworkable.hpp"
 #include "Interfaces/IClientEntityList.hpp"
@@ -20,12 +19,11 @@ public:
 class Interface {
 private:
     template< class Interface_ > Interface_* CreateInterface( const char* dllmodule, const char* interface_name ) {
-        Type_CreateInterface create_interface = reinterpret_cast< Type_CreateInterface >( GetProcAddress( GetModuleHandleA( dllmodule ), "CreateInterface" ) );
-        if ( create_interface == nullptr )
-            return nullptr;
+        Type_CreateInterface create_interface_fn = reinterpret_cast< Type_CreateInterface >( GetProcAddress( GetModuleHandleA( dllmodule ), "CreateInterface" ) );
+        if ( create_interface_fn == nullptr ) return nullptr;
 
         int return_code = 0;
-        Interface_* interface_ = reinterpret_cast< Interface_* >( create_interface( interface_name, &return_code ) );
+        Interface_* interface_ = reinterpret_cast< Interface_* >( create_interface_fn( interface_name, &return_code ) );
 
         return interface_;
     }
@@ -35,9 +33,9 @@ public:
         interface_ = CreateInterface< Interface_ >( dllmodule, interface_name );
 
         if ( interface_ == nullptr )
-            throw std::runtime_error( g_utils::string::ToString( interface_name ) + " is nullptr" );
+            throw std::runtime_error( std::string( interface_name ) + " is nullptr" );
         else if ( IsBadReadPtr( interface_, sizeof( void* ) ) )
-            throw std::runtime_error( g_utils::string::ToString( interface_name ) + " is invalid ptr" );
+            throw std::runtime_error( std::string( interface_name ) + " is invalid ptr" );
     }
 }; extern Interface g_interface;
 

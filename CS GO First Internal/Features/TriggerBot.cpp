@@ -3,7 +3,6 @@
 #include "..\SDK\C_Weapon.hpp"
 #include "..\Utils\Vector3.hpp"
 #include "..\SDK\C_Client.hpp"
-#include <iostream>
 #include <thread>
 
 F_TriggerBot g_triggerbot { };
