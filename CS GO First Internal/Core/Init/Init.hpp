@@ -2,11 +2,11 @@
 #define __MAIN_INIT_HPP__
 
 class Init {
-private:
+public:
     void Interfaces( );
 
 public:
-    void Initialization( );
+    void InitAll( );
 }; extern Init g_init;
 
 #endif//__MAIN_INIT_HPP__

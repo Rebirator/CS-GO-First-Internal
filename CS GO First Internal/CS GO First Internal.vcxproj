@@ -164,14 +164,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Core\Console\Console.hpp" />
     <ClInclude Include="Features\Aimbot.hpp" />
     <ClInclude Include="Features\Glow.hpp" />
     <ClInclude Include="Features\Misc.hpp" />
     <ClInclude Include="Features\TriggerBot.hpp" />
     <ClInclude Include="Gui\Config.hpp" />
     <ClInclude Include="Gui\Menu.hpp" />
-    <ClInclude Include="Main\Hack.hpp" />
-    <ClInclude Include="Main\Init.hpp" />
+    <ClInclude Include="Core\Hack\Hack.hpp" />
+    <ClInclude Include="Core\Init\Init.hpp" />
     <ClInclude Include="SDK\Interfaces.hpp" />
     <ClInclude Include="SDK\C_Client.hpp" />
     <ClInclude Include="SDK\C_ColorRenderManager.hpp" />
@@ -189,14 +190,15 @@
     <ClInclude Include="Utils\Vector3.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Core\Console\Console.cpp" />
     <ClCompile Include="Features\Aimbot.cpp" />
     <ClCompile Include="Features\Glow.cpp" />
     <ClCompile Include="Features\Misc.cpp" />
     <ClCompile Include="Features\TriggerBot.cpp" />
     <ClCompile Include="Gui\Menu.cpp" />
-    <ClCompile Include="Main\dllmain.cpp" />
-    <ClCompile Include="Main\Hack.cpp" />
-    <ClCompile Include="Main\Init.cpp" />
+    <ClCompile Include="Core\dllmain.cpp" />
+    <ClCompile Include="Core\Hack\Hack.cpp" />
+    <ClCompile Include="Core\Init\Init.cpp" />
     <ClCompile Include="SDK\C_Client.cpp" />
     <ClCompile Include="SDK\C_ColorRenderManager.cpp" />
     <ClCompile Include="SDK\C_Entity.cpp" />

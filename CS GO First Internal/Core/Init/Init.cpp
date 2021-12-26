@@ -1,9 +1,9 @@
 #include "Init.hpp"
-#include "..\SDK\Interfaces.hpp"
+#include "..\..\SDK\Interfaces.hpp"
 
 Init g_init { };
 
-void Init::Initialization( ) {
+void Init::InitAll( ) {
     Init::Interfaces( );
 }
 

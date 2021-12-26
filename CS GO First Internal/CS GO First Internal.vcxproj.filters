@@ -39,7 +39,7 @@
     <ClInclude Include="Utils\Vector3.hpp">
       <Filter>Utils</Filter>
     </ClInclude>
-    <ClInclude Include="Main\Hack.hpp">
+    <ClInclude Include="Core\Hack\Hack.hpp">
       <Filter>Main</Filter>
     </ClInclude>
     <ClInclude Include="SDK\C_Weapon.hpp">
@@ -74,7 +74,8 @@
     <ClInclude Include="SDK\Interfaces\IClientNetworkable.hpp" />
     <ClInclude Include="SDK\Interfaces\IClientUnknown.hpp" />
     <ClInclude Include="SDK\Interfaces.hpp" />
-    <ClInclude Include="Main\Init.hpp" />
+    <ClInclude Include="Core\Init\Init.hpp" />
+    <ClInclude Include="Core\Console\Console.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Features\Misc.cpp">
@@ -86,10 +87,10 @@
     <ClCompile Include="SDK\C_Entity.cpp">
       <Filter>SDK</Filter>
     </ClCompile>
-    <ClCompile Include="Main\Hack.cpp">
+    <ClCompile Include="Core\Hack\Hack.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="Main\dllmain.cpp">
+    <ClCompile Include="Core\dllmain.cpp">
       <Filter>Main</Filter>
     </ClCompile>
     <ClCompile Include="Utils\Vector3.cpp">
@@ -119,8 +120,9 @@
     <ClCompile Include="Utils\Module.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
-    <ClCompile Include="Main\Init.cpp" />
+    <ClCompile Include="Core\Init\Init.cpp" />
     <ClCompile Include="SDK\Interfaces.cpp" />
+    <ClCompile Include="Core\Console\Console.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />

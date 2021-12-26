@@ -4,19 +4,16 @@
 #include <Windows.h>
 #include <iostream>
 #include <thread>
-#include "Init.hpp"
-#include "..\Utils\Defines.hpp"
-#include "..\SDK\Offsets.hpp"
-#include "..\Utils\Module.hpp"
-#include "..\Main\Hack.hpp"
+
+#include "Console/Console.hpp"
+#include "Init/Init.hpp"
+#include "Hack/Hack.hpp"
     
 DWORD WINAPI Entry( void* h_module ) {
     try {
-        AllocConsole( );
-        freopen_s( ( FILE** )stdin, "CONIN$", "r", stdout );
-        freopen_s( ( FILE** )stdout, "CONOUT$", "w", stdout );
+        g_console.Attach( );
 
-        g_init.Initialization( );
+        g_init.InitAll( );
 
         while ( !GetAsyncKeyState( VK_END ) ) {
             Hack( );
@@ -32,7 +29,6 @@ DWORD WINAPI Entry( void* h_module ) {
     #endif _DEBUG
 
         Beep( 1500, 700 );
-
         fclose( stdin );
         fclose( stdout );
         FreeConsole( );
@@ -47,8 +43,9 @@ DWORD WINAPI Exit( void* h_module ) {
         std::this_thread::sleep_for( std::chrono::milliseconds( 100 ) );
 
     try {
-        Beep( 1100, 200 );
+        g_console.Dettach( );
 
+        Beep( 1100, 200 );
         fclose( stdin );
         fclose( stdout );
         FreeConsole( );
@@ -59,10 +56,9 @@ DWORD WINAPI Exit( void* h_module ) {
 
     #ifdef _DEBUG
         _RPT0( _CRT_ERROR, error.what( ) );
-    #endif
+    #endif _DEBUG
 
         Beep( 1500, 700 );
-
         fclose( stdin );
         fclose( stdout );
         FreeConsole( );
@@ -76,7 +72,7 @@ BOOL APIENTRY DllMain( HMODULE self, DWORD ul_reason_for_call, LPVOID lp_reserve
     if ( ul_reason_for_call == DLL_PROCESS_ATTACH ) {
     #ifndef _DEBUG // If release build
         DisableThreadLibraryCalls( self );
-    #endif
+    #endif  _DEBUG
 
         HANDLE entry_thread = CreateThread( nullptr, 0, &Entry, nullptr, 0, nullptr );
         if ( entry_thread != nullptr ) CloseHandle( entry_thread );

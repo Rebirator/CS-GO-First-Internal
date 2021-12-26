@@ -1,12 +1,11 @@
 #include <Windows.h>
+
 #include "Hack.hpp"
-#include "..\Gui\Menu.hpp"
-#include "..\Features\Aimbot.hpp"
-#include "..\Features\TriggerBot.hpp"
-#include "..\Features\Misc.hpp"
-#include "..\Features\Glow.hpp"
-#include "..\Utils\Defines.hpp"
-#include "..\SDK\Offsets.hpp"
+#include "..\..\Utils\Defines.hpp"
+#include "..\..\Features\Aimbot.hpp"
+#include "..\..\Features\TriggerBot.hpp"
+#include "..\..\Features\Misc.hpp"
+#include "..\..\Features\Glow.hpp"
 
 void Hack( ) {
 	if ( g_pLocalPlayer ) {
