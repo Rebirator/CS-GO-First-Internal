@@ -1,5 +1,5 @@
-#ifndef __MISC__
-#define __MISC__
+#ifndef __FEATURES_MISC__
+#define __FEATURES_MISC__
 
 #include "..\Utils\Defines.hpp"
 #include "..\Utils\Vector3.hpp"
@@ -11,4 +11,4 @@ public:
 	void RecoilControlSystem( );
 }; extern F_Misc g_misc;
 
-#endif//__MISC__
+#endif __FEATURES_MISC__

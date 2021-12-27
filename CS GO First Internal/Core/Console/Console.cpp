@@ -33,7 +33,7 @@ void C_Console::Dettach( ) {
 }
 
 void C_Console::Print( const char* text ) {
-#ifdef _DEBUG
+#ifdef __DEBUG__
     std::cout << text;
-#endif _DEBUG
+#endif __DEBUG__
 }

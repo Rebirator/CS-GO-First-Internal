@@ -14,7 +14,7 @@ public:
     void Print( const char* text );
 
     template< typename T, typename... Targs > void Print( const char* format, T value, Targs... f_args ) {
-    #ifdef _DEBUG
+    #ifdef __DEBUG__
         for ( ; *format != '\0'; format++ ) {
             if ( *format == '%' && *( format + 1 ) == 'x' ) {
                 std::cout << std::hex << value;
@@ -30,7 +30,7 @@ public:
 
             std::cout << *format;
         }
-    #endif
+    #endif __DEBUG__
     }
 }; extern C_Console g_console;
 

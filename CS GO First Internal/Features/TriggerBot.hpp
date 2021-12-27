@@ -1,5 +1,5 @@
-#ifndef __TRIGGERBOT__
-#define __TRIGGERBOT__
+#ifndef __FEATURES_TRIGGERBOT__
+#define __FEATURES_TRIGGERBOT__
 
 #include "..\Utils\Defines.hpp"
 
@@ -8,4 +8,4 @@ public:
 	void TriggerBot( );
 }; extern F_TriggerBot g_triggerbot;
 
-#endif//__TRIGGERBOT__
+#endif __FEATURES_TRIGGERBOT__

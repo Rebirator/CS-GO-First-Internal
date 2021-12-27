@@ -11,8 +11,9 @@
     
 DWORD WINAPI Entry( void* h_module ) {
     try {
-        g_console.Attach( );
-
+    #ifdef __DEBUG__
+        g_console.Attach( ); 
+    #endif __DEBUG__
         g_init.InitAll( );
 
         while ( !GetAsyncKeyState( VK_END ) ) {
@@ -43,7 +44,9 @@ DWORD WINAPI Exit( void* h_module ) {
         std::this_thread::sleep_for( std::chrono::milliseconds( 100 ) );
 
     try {
+    #ifdef __DEBUG__
         g_console.Dettach( );
+    #endif __DEBUG__
 
         Beep( 1100, 200 );
         fclose( stdin );
@@ -54,9 +57,9 @@ DWORD WINAPI Exit( void* h_module ) {
     catch ( const std::runtime_error &error ) {
         UNREFERENCED_PARAMETER( error );
 
-    #ifdef _DEBUG
+    #ifdef __DEBUG__
         _RPT0( _CRT_ERROR, error.what( ) );
-    #endif _DEBUG
+    #endif __DEBUG__
 
         Beep( 1500, 700 );
         fclose( stdin );
@@ -64,15 +67,13 @@ DWORD WINAPI Exit( void* h_module ) {
         FreeConsole( );
         FreeLibraryAndExitThread( static_cast< HMODULE >( h_module ), EXIT_SUCCESS );
     }
-
-    return EXIT_SUCCESS;
 }
 
-BOOL APIENTRY DllMain( HMODULE self, DWORD ul_reason_for_call, LPVOID lp_reserved ) {
-    if ( ul_reason_for_call == DLL_PROCESS_ATTACH ) {
-    #ifndef _DEBUG // If release build
+BOOL APIENTRY DllMain( HMODULE self, DWORD reason_for_call, LPVOID reserved ) {
+    if ( reason_for_call == DLL_PROCESS_ATTACH ) {
+    #ifndef __DEBUG__ // If release build
         DisableThreadLibraryCalls( self );
-    #endif  _DEBUG
+    #endif  __DEBUG__
 
         HANDLE entry_thread = CreateThread( nullptr, 0, &Entry, nullptr, 0, nullptr );
         if ( entry_thread != nullptr ) CloseHandle( entry_thread );
@@ -83,6 +84,7 @@ BOOL APIENTRY DllMain( HMODULE self, DWORD ul_reason_for_call, LPVOID lp_reserve
         return TRUE;
     }
 
+    delete reserved;
     return EXIT_SUCCESS;
 }
 

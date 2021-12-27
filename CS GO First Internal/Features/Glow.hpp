@@ -1,5 +1,5 @@
-#ifndef __GLOW__
-#define __GLOW__
+#ifndef __FEATURES_GLOW__
+#define __FEATURES_GLOW__
 
 #include "..\Utils\Defines.hpp"
 
@@ -8,4 +8,4 @@ public:
 	void Glow( );
 }; extern F_Glow g_glow;
 
-#endif//__GLOW__
+#endif __FEATURES_AIMBOT__

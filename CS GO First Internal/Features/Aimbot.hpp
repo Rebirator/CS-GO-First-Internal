@@ -1,5 +1,5 @@
-#ifndef __AIMBOT__
-#define __AIMBOT__
+#ifndef __FEATURES_AIMBOT__
+#define __FEATURES_AIMBOT__
 
 #include "..\Utils\Defines.hpp"
 
@@ -8,4 +8,4 @@ public:
 	void Aimbot( );
 }; extern F_Aimbot g_aimbot;
 
-#endif//__AIMBOT__
+#endif __FEATURES_AIMBOT__

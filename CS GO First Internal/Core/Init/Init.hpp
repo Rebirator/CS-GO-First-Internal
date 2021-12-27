@@ -1,5 +1,5 @@
-#ifndef __MAIN_INIT_HPP__
-#define __MAIN_INIT_HPP__
+#ifndef __CORE_INIT_INIT_HPP__
+#define __CORE_INIT_INIT_HPP__
 
 class Init {
 public:
@@ -9,4 +9,4 @@ public:
     void InitAll( );
 }; extern Init g_init;
 
-#endif//__MAIN_INIT_HPP__
+#endif __CORE_INIT_INIT_HPP__

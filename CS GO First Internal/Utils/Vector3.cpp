@@ -1,4 +1,7 @@
+#pragma warning( disable: 4458 )
+
 #include <cmath>
+
 #include "Vector3.hpp"
 #include "Defines.hpp"
 
@@ -21,9 +24,7 @@ void Vector3::Init( float x, float y, float z ) {
 }
 
 float Vector3::Distance( Vector3 a, Vector3 b ) {
-	return CS_INCH_TO_METERS ( 
-		sqrt( pow( a.x - b.x, 2) + pow( a.y - b.y, 2) + pow( a.z - b.z, 2) )
-	);
+	return CS_INCH_TO_METERS( sqrt( pow( a.x - b.x, 2) + pow( a.y - b.y, 2) + pow( a.z - b.z, 2) ) );
 }
 
 float Vector3::DistanceInchs( Vector3 a, Vector3 b ) {
@@ -40,7 +41,7 @@ Vector3 Vector3::CalculateAngles( Vector3 a, Vector3 b ) {
 	Vector3 angles = Vector3( ( float )pitch, ( float )yaw, 0.0f );
 	angles.NormalizeAngles( );
 
-	return Vector3( angles );
+	return angles;
 }
 
 void Vector3::NormalizeAngles( ) {
