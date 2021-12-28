@@ -23,10 +23,10 @@ BYTE* Hook::Trampoline_x86( BYTE* target, BYTE* source, short length ) {
     // Create gateway
     BYTE* gateway = reinterpret_cast< BYTE* >( VirtualAlloc( nullptr, length + 5, MEM_COMMIT | MEM_RESERVE, PAGE_EXECUTE_READWRITE ) );
 
-    // Original bytes
+    // Copy stolen bytes to gateway
     memcpy_s( gateway, length, target, length );
 
-    // Add jmp instruction and our source address to gateway
+    // Add jmp instruction and our source address at end in gateway
     *( gateway + length ) = 0x9E;
     *reinterpret_cast< uintptr_t* >( gateway + length + 1 ) = ( uintptr_t )( ( target - gateway ) - 5 );
 
