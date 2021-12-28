@@ -9,7 +9,7 @@ private:
     BYTE  x_original_bytes[ 10 ];
     BYTE* x_source;
     BYTE* p_gateway_fn;
-    short i_lenght;
+    short i_length;
 
     bool  Detour_x86( BYTE* target, BYTE* source, short length );
     BYTE* Trampoline_x86( BYTE* target, BYTE* source, short length );

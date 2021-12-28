@@ -41,7 +41,7 @@ template< class Type_Function > void Hook::Create( BYTE* target, BYTE* source, s
     Hook::x_target     = target;
     Hook::x_source     = source;
     Hook::p_gateway_fn = gateway_fn;
-    Hook::i_lenght     = length;
+    Hook::i_length     = length;
 }
 
 template< class Type_Function > void Hook::Create( const char* dllmodule, const char* function_name, BYTE* source, short length ) {
@@ -53,19 +53,19 @@ template< class Type_Function > void Hook::Create( const char* dllmodule, const 
     Hook::x_target     = reinterpret_cast< BYTE* >( GetProcAddress( h_module, function_name ) );
     Hook::x_source     = source;
     Hook::p_gateway_fn = gateway_fn;
-    Hook::i_lenght     = length;
+    Hook::i_length     = length;
 }
 
 void Hook::Enable( ) {
-    memcpy( Hook::x_original_bytes, Hook::x_target, Hook::i_lenght );
-    *reinterpret_cast< uintptr_t* >( Hook::p_gateway_fn ) = reinterpret_cast< uintptr_t >( Trampoline_x86( Hook::x_target, Hook::x_source, Hook::i_lenght ) );
+    memcpy( Hook::x_original_bytes, Hook::x_target, Hook::i_length );
+    *reinterpret_cast< uintptr_t* >( Hook::p_gateway_fn ) = reinterpret_cast< uintptr_t >( Trampoline_x86( Hook::x_target, Hook::x_source, Hook::i_length ) );
 }
 
 void Hook::Disable( ) {
     DWORD cur_protect;
-    VirtualProtect( Hook::x_target, Hook::i_lenght, PAGE_EXECUTE_READWRITE, &cur_protect );
+    VirtualProtect( Hook::x_target, Hook::i_length, PAGE_EXECUTE_READWRITE, &cur_protect );
 
-    memcpy( Hook::x_target, Hook::x_original_bytes, Hook::i_lenght );
+    memcpy( Hook::x_target, Hook::x_original_bytes, Hook::i_length );
 
-    VirtualProtect( Hook::x_target, Hook::i_lenght, cur_protect, &cur_protect );
+    VirtualProtect( Hook::x_target, Hook::i_length, cur_protect, &cur_protect );
 }
