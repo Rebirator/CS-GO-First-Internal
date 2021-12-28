@@ -76,6 +76,7 @@
     <ClInclude Include="SDK\Interfaces.hpp" />
     <ClInclude Include="Core\Init\Init.hpp" />
     <ClInclude Include="Core\Console\Console.hpp" />
+    <ClInclude Include="Core\Hooks\Hooks.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Features\Misc.cpp">
@@ -123,6 +124,7 @@
     <ClCompile Include="Core\Init\Init.cpp" />
     <ClCompile Include="SDK\Interfaces.cpp" />
     <ClCompile Include="Core\Console\Console.cpp" />
+    <ClCompile Include="Core\Hooks\Hooks.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />

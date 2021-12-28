@@ -3,9 +3,9 @@
 
 #include "..\Utils\Defines.hpp"
 
-class F_TriggerBot {
+class C_TriggerBot {
 public:
-	void TriggerBot( );
-}; extern F_TriggerBot g_triggerbot;
+	void TriggerBot( );	
+}; extern C_TriggerBot g_triggerbot;
 
-#endif __FEATURES_TRIGGERBOT__
+#endif  __FEATURES_TRIGGERBOT__

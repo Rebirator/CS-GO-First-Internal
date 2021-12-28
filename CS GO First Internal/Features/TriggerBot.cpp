@@ -5,9 +5,9 @@
 #include "..\SDK\C_Client.hpp"
 #include <thread>
 
-F_TriggerBot g_triggerbot { };
+C_TriggerBot g_triggerbot { };
 
-void F_TriggerBot::TriggerBot( ) {
+void C_TriggerBot::TriggerBot( ) {
 	C_Entity* entity = g_entity.GetByCrosshairID( );
 
 	if ( entity->IsAlive( ) && entity->GetTeam( ) != g_pLocalEntity->GetTeam( ) ) {

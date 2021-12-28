@@ -3,9 +3,9 @@
 
 #include "..\Utils\Defines.hpp"
 
-class F_Glow {
+class C_Glow {
 public:
 	void Glow( );
-}; extern F_Glow g_glow;
+}; extern C_Glow g_glow;
 
-#endif __FEATURES_AIMBOT__
+#endif  __FEATURES_AIMBOT__

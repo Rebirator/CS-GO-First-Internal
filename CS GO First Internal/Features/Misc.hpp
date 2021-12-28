@@ -4,11 +4,11 @@
 #include "..\Utils\Defines.hpp"
 #include "..\Utils\Vector3.hpp"
 
-class F_Misc {
+class C_Misc {
 public:
 	void BunnyHop( );
 	void RadarHack( );
 	void RecoilControlSystem( );
-}; extern F_Misc g_misc;
+}; extern C_Misc g_misc;
 
-#endif __FEATURES_MISC__
+#endif  __FEATURES_MISC__

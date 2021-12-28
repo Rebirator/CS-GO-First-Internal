@@ -167,6 +167,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Core\Console\Console.hpp" />
+    <ClInclude Include="Core\Hooks\Hooks.hpp" />
     <ClInclude Include="Features\Aimbot.hpp" />
     <ClInclude Include="Features\Glow.hpp" />
     <ClInclude Include="Features\Misc.hpp" />
@@ -193,6 +194,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Core\Console\Console.cpp" />
+    <ClCompile Include="Core\Hooks\Hooks.cpp" />
     <ClCompile Include="Features\Aimbot.cpp" />
     <ClCompile Include="Features\Glow.cpp" />
     <ClCompile Include="Features\Misc.cpp" />

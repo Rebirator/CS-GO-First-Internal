@@ -6,9 +6,9 @@
 #include <Psapi.h>
 #include <vector>
 
-F_Misc g_misc { };
+C_Misc g_misc { };
 
-void F_Misc::BunnyHop( ) {
+void C_Misc::BunnyHop( ) {
 	if ( GetAsyncKeyState( VK_SPACE ) ) {
 		if ( g_pLocalEntity->GetFlags( ) & ( 1 << 0 ) ) {
 			g_client.DoJump( );
@@ -16,7 +16,7 @@ void F_Misc::BunnyHop( ) {
 	}
 }
 
-void F_Misc::RadarHack( ) {
+void C_Misc::RadarHack( ) {
 	for ( short i = 1; i < g_client.GetMaxClients( ); i++ ) {
 		C_Entity* entity = g_entity.GetByID( i );
 
@@ -26,7 +26,7 @@ void F_Misc::RadarHack( ) {
 	}
 }
 
-void F_Misc::RecoilControlSystem( ) {
+void C_Misc::RecoilControlSystem( ) {
 	static Vector3 old_punch;
 	Vector3 punch_angle = g_pLocalEntity->GetAimPunch( ) * 2.1f;
 

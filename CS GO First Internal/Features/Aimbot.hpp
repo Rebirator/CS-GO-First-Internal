@@ -3,9 +3,9 @@
 
 #include "..\Utils\Defines.hpp"
 
-class F_Aimbot {
+class C_Aimbot {
 public:
 	void Aimbot( );
-}; extern F_Aimbot g_aimbot;
+}; extern C_Aimbot g_aimbot;
 
-#endif __FEATURES_AIMBOT__
+#endif  __FEATURES_AIMBOT__

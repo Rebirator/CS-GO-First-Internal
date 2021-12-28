@@ -4,9 +4,9 @@
 #include "..\Utils\Vector3.hpp"
 #include "..\SDK\C_Client.hpp"
 
-F_Aimbot g_aimbot { };
+C_Aimbot g_aimbot { };
 
-void F_Aimbot::Aimbot( ) {
+void C_Aimbot::Aimbot( ) {
 	if ( GetAsyncKeyState( VK_RBUTTON ) ) {
 		C_Entity* entity = g_entity.GetClosestEntity( );
 
