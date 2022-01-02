@@ -77,6 +77,12 @@
     <ClInclude Include="Core\Init\Init.hpp" />
     <ClInclude Include="Core\Console\Console.hpp" />
     <ClInclude Include="Core\Hooks\Hooks.hpp" />
+    <ClInclude Include="SDK\NetvarManager.hpp" />
+    <ClInclude Include="SDK\Game\ClientClass.hpp" />
+    <ClInclude Include="SDK\Game\DTRecv.hpp" />
+    <ClInclude Include="SDK\Interfaces\ICHLClient .hpp" />
+    <ClInclude Include="Utils\Misc.hpp" />
+    <ClInclude Include="SDK\VirtualMethod.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Features\Misc.cpp">
@@ -125,6 +131,7 @@
     <ClCompile Include="SDK\Interfaces.cpp" />
     <ClCompile Include="Core\Console\Console.cpp" />
     <ClCompile Include="Core\Hooks\Hooks.cpp" />
+    <ClCompile Include="SDK\NetvarManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />

@@ -1,5 +1,5 @@
-#ifndef __DEFINES__
-#define __DEFINES__
+#ifndef __UTILS_DEFINES_HPP__
+#define __UTILS_DEFINES_HPP__
 
 #include "..\SDK\Offsets.hpp"
 
@@ -15,4 +15,4 @@
 #define KEY_UNHOLD 0
 #define KEY_HOLD   -32768
 
-#endif//__DEFINES__
+#endif  __UTILS_DEFINES_HPP__

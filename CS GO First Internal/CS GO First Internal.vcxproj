@@ -176,18 +176,24 @@
     <ClInclude Include="Gui\Menu.hpp" />
     <ClInclude Include="Core\Hack\Hack.hpp" />
     <ClInclude Include="Core\Init\Init.hpp" />
+    <ClInclude Include="SDK\Game\ClientClass.hpp" />
+    <ClInclude Include="SDK\Game\DTRecv.hpp" />
     <ClInclude Include="SDK\Interfaces.hpp" />
     <ClInclude Include="SDK\C_Client.hpp" />
     <ClInclude Include="SDK\C_ColorRenderManager.hpp" />
     <ClInclude Include="SDK\C_Entity.hpp" />
     <ClInclude Include="SDK\C_GlowManager.hpp" />
     <ClInclude Include="SDK\Hazedumper.hpp" />
+    <ClInclude Include="SDK\Interfaces\ICHLClient .hpp" />
     <ClInclude Include="SDK\Interfaces\IClientEntityList.hpp" />
     <ClInclude Include="SDK\Interfaces\IClientNetworkable.hpp" />
     <ClInclude Include="SDK\Interfaces\IClientUnknown.hpp" />
+    <ClInclude Include="SDK\NetvarManager.hpp" />
     <ClInclude Include="SDK\Offsets.hpp" />
     <ClInclude Include="SDK\C_Weapon.hpp" />
+    <ClInclude Include="SDK\VirtualMethod.hpp" />
     <ClInclude Include="Utils\Defines.hpp" />
+    <ClInclude Include="Utils\Misc.hpp" />
     <ClInclude Include="Utils\Module.hpp" />
     <ClInclude Include="Utils\Pad.hpp" />
     <ClInclude Include="Utils\Vector3.hpp" />
@@ -209,6 +215,7 @@
     <ClCompile Include="SDK\C_GlowManager.cpp" />
     <ClCompile Include="SDK\C_Weapon.cpp" />
     <ClCompile Include="SDK\Interfaces.cpp" />
+    <ClCompile Include="SDK\NetvarManager.cpp" />
     <ClCompile Include="Utils\Module.cpp" />
     <ClCompile Include="Utils\Vector3.cpp" />
   </ItemGroup>

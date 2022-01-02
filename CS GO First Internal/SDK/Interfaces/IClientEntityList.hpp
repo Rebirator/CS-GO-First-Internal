@@ -1,23 +1,46 @@
 #ifndef __SDK_INTERFACES_ICLIENTENTITYLIST_HPP__
 #define __SDK_INTERFACES_ICLIENTENTITYLIST_HPP__
 
+#include "../C_Entity.hpp"
+#include "../../Utils/Misc.hpp"
+
+#include "../VirtualMethod.hpp"
 #include "IClientNetworkable.hpp"
 #include "IClientUnknown.hpp"
-#include "../C_Entity.hpp"
 
 class IClientEntityList {
+	enum Indicies : size_t {
+		GETCLIENTNETWORKABLE			= 0,
+		GETCLIENTNETWORKABLEFROMHANDLE  = 1,
+		GETCLIENTUNKNOWNFROMHANDLE		= 2,
+		GETCLIENTENTITY					= 3,
+		GETCLIENTENTITYFROMHANDLE		= 4,
+		NUMBEROFENTITIES				= 5,
+		GETHIGHESTENTITYINDEX			= 6,
+		SETMAXENTITIES					= 7,
+		GETMAXENTITIES					= 8,
+		GETCLIENTNETWORKABLEARRAY		= 9
+	};
 public:
-	virtual IClientNetworkable*	GetClientNetworkable( int entnum )					= 0;
-	virtual IClientNetworkable*	GetClientNetworkableFromHandle( void* hEnt )		= 0;
-	virtual IClientUnknown*		GetClientUnknownFromHandle( void* hEnt )			= 0;
+	VIRTUAL_METHOD( IClientNetworkable*, GetClientNetworkable, GETCLIENTNETWORKABLE, ( this, entity_id ), int entity_id );
 
-	virtual C_Entity*			GetClientEntity( int ent_id )						= 0;
-	virtual C_Entity*			GetClientEntityFromHandle( void* h_ent )			= 0;
-	virtual int					NumberOfEntities( bool include_non_networkable )	= 0;
-	virtual int					GetHighestEntityIndex( void )						= 0;
-	virtual void				SetMaxEntities( int max_ents )						= 0;
-	virtual int					GetMaxEntities( )									= 0;
-	virtual void*				GetClientNetworkableArray( )						= 0; // virtual EntityCacheInfo_t
+	VIRTUAL_METHOD( IClientNetworkable*, GetClientNetworkableFromHandle, GETCLIENTNETWORKABLEFROMHANDLE, ( this, entity ), void* entity );
+
+	VIRTUAL_METHOD( IClientUnknown*, GetClientUnknownFromHandle, GETCLIENTUNKNOWNFROMHANDLE, ( this, entity ), void* entity );
+
+	VIRTUAL_METHOD( C_Entity*, GetClientEntity, GETCLIENTENTITY, ( this, entity_id ), int entity_id );
+
+	VIRTUAL_METHOD( C_Entity*, GetClientEntityFromHandle, GETCLIENTENTITYFROMHANDLE, ( this, entity ), void* entity );
+
+	VIRTUAL_METHOD( int, NumberOfEntities, NUMBEROFENTITIES, ( this, include_non_networkable ), bool include_non_networkable );
+
+	VIRTUAL_METHOD( int, GetHighestEntityIndex, GETHIGHESTENTITYINDEX, ( this ) );
+
+	VIRTUAL_METHOD( void, SetMaxEntities, SETMAXENTITIES, ( this, max_ents ), int max_ents );
+
+	VIRTUAL_METHOD( int, GetMaxEntities, GETMAXENTITIES, ( this ) );
+
+	VIRTUAL_METHOD( void*, GetClientNetworkableArray, GETCLIENTNETWORKABLEARRAY, ( this ) );
 };
 
 #endif//__SDK_INTERFACES_ICLIENTENTITYLIST_HPP__

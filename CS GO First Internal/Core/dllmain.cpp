@@ -1,6 +1,3 @@
-#ifndef __DLLMAIN__
-#define __DLLMAIN__
-
 #include <Windows.h>
 #include <iostream>
 #include <thread>
@@ -84,8 +81,5 @@ BOOL APIENTRY DllMain( HMODULE self, DWORD reason_for_call, LPVOID reserved ) {
         return TRUE;
     }
 
-    delete reserved;
     return EXIT_SUCCESS;
 }
-
-#endif//__DLLMAIN__

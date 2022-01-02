@@ -1,5 +1,5 @@
-#ifndef __UTILS_MODULE__
-#define __UTILS_MODULE__
+#ifndef __UTILS_MODULE_HPP__
+#define __UTILS_MODULE_HPP__
 
 #include <Windows.h>
 #include <Psapi.h>
@@ -20,4 +20,4 @@ public:
 	};
 }; extern Module g_module;
 
-#endif//__UTILS_MODULE__
+#endif __UTILS_MODULE_HPP__

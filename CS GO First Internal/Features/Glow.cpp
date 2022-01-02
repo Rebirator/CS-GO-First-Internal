@@ -4,12 +4,13 @@
 #include "..\SDK\C_Client.hpp"
 #include "..\SDK\C_Entity.hpp"
 #include "..\SDK\Interfaces.hpp"
+#include "..\SDK\NetvarManager.hpp"
 
 C_Glow g_glow { };
 
 void C_Glow::Glow( ) {
-	for ( short i = 1; i < g_interfaces.p_client_entitylist->GetHighestEntityIndex( ); i++ ) {
-		C_Entity* entity = g_interfaces.p_client_entitylist->GetClientEntity( i );
+	for ( short i = 1; i < g_interfaces.m_pClientEntityList->GetHighestEntityIndex( ); i++ ) {
+		C_Entity* entity = g_interfaces.m_pClientEntityList->GetClientEntity( i );
 
 		if ( entity->IsAlive( ) ) {
 			if ( entity->GetTeam( ) != g_pLocalEntity->GetTeam( ) ) {

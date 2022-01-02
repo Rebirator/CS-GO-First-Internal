@@ -1,4 +1,4 @@
 #include "Interfaces.hpp"
 
-Interfaces  g_interfaces { };
-Interface   g_interface  { };
+CInterfaces  g_interfaces { };
+CInterface   g_interface  { };

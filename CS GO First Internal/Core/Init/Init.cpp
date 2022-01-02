@@ -8,5 +8,6 @@ void Init::InitAll( ) {
 }
 
 void Init::Interfaces( ) {
-    g_interface.GetInterface< IClientEntityList >( g_interfaces.p_client_entitylist, "client.dll", "VClientEntityList003" );
+    g_interface.GetInterface< IClientEntityList >( g_interfaces.m_pClientEntityList, "client.dll", "VClientEntityList003" );
+    g_interface.GetInterface< ICHLClient >( g_interfaces.m_pClient, "client.dll", "VClient018" );
 }

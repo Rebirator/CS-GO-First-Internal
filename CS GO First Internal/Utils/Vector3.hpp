@@ -1,5 +1,5 @@
-#ifndef __VECTOR__
-#define __VECTOR__
+#ifndef __UTILS_VECTOR3_HP__
+#define __UTILS_VECTOR3_HP__
 
 class Vector3 {
 public:
@@ -23,4 +23,4 @@ public:
 	Vector3 NormalizeAngles( Vector3 angles );
 }; extern Vector3 g_vector3;
 
-#endif//__VECTOR__
+#endif __UTILS_VECTOR3_HP__
