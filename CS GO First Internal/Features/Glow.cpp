@@ -2,20 +2,20 @@
 #include "..\SDK\C_GlowManager.hpp"
 #include "..\SDK\C_ColorRenderManager.hpp"
 #include "..\SDK\C_Client.hpp"
-#include "..\SDK\C_Entity.hpp"
-#include "..\SDK\Interfaces.hpp"
-#include "..\SDK\NetvarManager.hpp"
+#include "..\SDK\CSGO\Cheat\CEntityPlayer.hpp"
+#include "..\SDK\CSGO\Interfaces.hpp"
+#include "..\SDK\CSGO\NetvarManager.hpp"
 
 C_Glow g_glow { };
 
 void C_Glow::Glow( ) {
 	for ( short i = 1; i < g_interfaces.m_pClientEntityList->GetHighestEntityIndex( ); i++ ) {
-		C_Entity* entity = g_interfaces.m_pClientEntityList->GetClientEntity( i );
+		CEntityPlayer* entity = g_interfaces.m_pClientEntityList->GetClientEntity( i );
 
-		if ( entity->IsAlive( ) ) {
-			if ( entity->GetTeam( ) != g_pLocalEntity->GetTeam( ) ) {
+		if ( entity->Alive( ) ) {
+			if ( entity->Team( ) != g_pLocalEntity->Team( ) ) {
 				g_glow_manager.Set( entity, 1.0f, 0.1f, 0.1f, 0.6f );
-				g_color_render_manager.Set( entity, ( BYTE )( 255 - entity->GetHealth( ) * 2.55 ), ( BYTE )( entity->GetHealth( ) * 2.55 ), 0 );
+				g_color_render_manager.Set( entity, ( BYTE )( 255 - entity->Health( ) * 2.55 ), ( BYTE )( entity->Health( ) * 2.55 ), 0 );
 			}
 			else {
 				g_glow_manager.Set( entity, 0.1f, 0.33f, 1.0f, 0.6f );

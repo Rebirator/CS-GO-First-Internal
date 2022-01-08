@@ -1,5 +1,5 @@
 #include "Init.hpp"
-#include "..\..\SDK\Interfaces.hpp"
+#include "..\..\SDK\CSGO\Interfaces.hpp"
 
 Init g_init { };
 

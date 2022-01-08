@@ -74,11 +74,15 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)Output\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)Output\Intermediate\$(Configuration)\</IntDir>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(DXSDK_DIR)Include;</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(DXSDK_DIR)Lib\x86;</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)Output\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)Output\Intermediate\$(Configuration)\</IntDir>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(DXSDK_DIR)Include;</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(DXSDK_DIR)Lib\x86;</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -168,6 +172,8 @@
   <ItemGroup>
     <ClInclude Include="Core\Console\Console.hpp" />
     <ClInclude Include="Core\Hooks\Hooks.hpp" />
+    <ClInclude Include="Core\Hooks\Targets\hkEndScene.hpp" />
+    <ClInclude Include="SDK\DirectX\D3DX9.hpp" />
     <ClInclude Include="Features\Aimbot.hpp" />
     <ClInclude Include="Features\Glow.hpp" />
     <ClInclude Include="Features\Misc.hpp" />
@@ -176,31 +182,33 @@
     <ClInclude Include="Gui\Menu.hpp" />
     <ClInclude Include="Core\Hack\Hack.hpp" />
     <ClInclude Include="Core\Init\Init.hpp" />
-    <ClInclude Include="SDK\Game\ClientClass.hpp" />
-    <ClInclude Include="SDK\Game\DTRecv.hpp" />
-    <ClInclude Include="SDK\Interfaces.hpp" />
+    <ClInclude Include="SDK\CSGO\Game\ClientClass.hpp" />
+    <ClInclude Include="SDK\CSGO\Game\DTRecv.hpp" />
+    <ClInclude Include="SDK\CSGO\Interfaces.hpp" />
     <ClInclude Include="SDK\C_Client.hpp" />
     <ClInclude Include="SDK\C_ColorRenderManager.hpp" />
-    <ClInclude Include="SDK\C_Entity.hpp" />
+    <ClInclude Include="SDK\CSGO\Cheat\CEntityPlayer.hpp" />
     <ClInclude Include="SDK\C_GlowManager.hpp" />
+    <ClInclude Include="SDK\DirectX\Render.hpp" />
     <ClInclude Include="SDK\Hazedumper.hpp" />
-    <ClInclude Include="SDK\Interfaces\ICHLClient .hpp" />
-    <ClInclude Include="SDK\Interfaces\IClientEntityList.hpp" />
-    <ClInclude Include="SDK\Interfaces\IClientNetworkable.hpp" />
-    <ClInclude Include="SDK\Interfaces\IClientUnknown.hpp" />
-    <ClInclude Include="SDK\NetvarManager.hpp" />
+    <ClInclude Include="SDK\CSGO\Interfaces\ICHLClient .hpp" />
+    <ClInclude Include="SDK\CSGO\Interfaces\IClientEntityList.hpp" />
+    <ClInclude Include="SDK\CSGO\Interfaces\IClientNetworkable.hpp" />
+    <ClInclude Include="SDK\CSGO\Interfaces\IClientUnknown.hpp" />
+    <ClInclude Include="SDK\CSGO\NetVarManager.hpp" />
     <ClInclude Include="SDK\Offsets.hpp" />
-    <ClInclude Include="SDK\C_Weapon.hpp" />
     <ClInclude Include="SDK\VirtualMethod.hpp" />
+    <ClInclude Include="Utils\DataTypes\Color.hpp" />
     <ClInclude Include="Utils\Defines.hpp" />
-    <ClInclude Include="Utils\Misc.hpp" />
     <ClInclude Include="Utils\Module.hpp" />
     <ClInclude Include="Utils\Pad.hpp" />
-    <ClInclude Include="Utils\Vector3.hpp" />
+    <ClInclude Include="Utils\DataTypes\Vector3.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Core\Console\Console.cpp" />
     <ClCompile Include="Core\Hooks\Hooks.cpp" />
+    <ClCompile Include="Core\Hooks\Targets\hkEndScene.cpp" />
+    <ClCompile Include="SDK\DirectX\D3DX9.cpp" />
     <ClCompile Include="Features\Aimbot.cpp" />
     <ClCompile Include="Features\Glow.cpp" />
     <ClCompile Include="Features\Misc.cpp" />
@@ -211,13 +219,12 @@
     <ClCompile Include="Core\Init\Init.cpp" />
     <ClCompile Include="SDK\C_Client.cpp" />
     <ClCompile Include="SDK\C_ColorRenderManager.cpp" />
-    <ClCompile Include="SDK\C_Entity.cpp" />
+    <ClCompile Include="SDK\CSGO\Cheat\CEntityPlayer.cpp" />
     <ClCompile Include="SDK\C_GlowManager.cpp" />
-    <ClCompile Include="SDK\C_Weapon.cpp" />
-    <ClCompile Include="SDK\Interfaces.cpp" />
-    <ClCompile Include="SDK\NetvarManager.cpp" />
+    <ClCompile Include="SDK\CSGO\Interfaces.cpp" />
+    <ClCompile Include="SDK\CSGO\NetVarManager.cpp" />
+    <ClCompile Include="SDK\DirectX\Render.cpp" />
     <ClCompile Include="Utils\Module.cpp" />
-    <ClCompile Include="Utils\Vector3.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />

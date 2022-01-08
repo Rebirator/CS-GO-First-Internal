@@ -2,7 +2,7 @@
 #define __CLIENT__
 
 #include "Offsets.hpp"
-#include "..\Utils\Vector3.hpp"
+#include "..\Utils\DataTypes\Vector3.hpp"
 
 class C_Client {
 public:

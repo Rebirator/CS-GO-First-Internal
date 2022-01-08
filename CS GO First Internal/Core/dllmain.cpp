@@ -5,6 +5,7 @@
 #include "Console/Console.hpp"
 #include "Init/Init.hpp"
 #include "Hack/Hack.hpp"
+#include "Hooks/Targets/hkEndScene.hpp"
     
 DWORD WINAPI Entry( void* h_module ) {
     try {
@@ -12,6 +13,8 @@ DWORD WINAPI Entry( void* h_module ) {
         g_console.Attach( ); 
     #endif __DEBUG__
         g_init.InitAll( );
+
+        InitEndScene( );
 
         while ( !GetAsyncKeyState( VK_END ) ) {
             Hack( );
@@ -27,9 +30,9 @@ DWORD WINAPI Entry( void* h_module ) {
     #endif _DEBUG
 
         Beep( 1500, 700 );
-        fclose( stdin );
-        fclose( stdout );
-        FreeConsole( );
+    #ifdef __DEBUG__
+        g_console.Dettach( );
+    #endif __DEBUG__
         FreeLibraryAndExitThread( static_cast< HMODULE >( h_module ), EXIT_SUCCESS );
     }
 
@@ -45,10 +48,12 @@ DWORD WINAPI Exit( void* h_module ) {
         g_console.Dettach( );
     #endif __DEBUG__
 
+        DeinitEndScene( );
+
         Beep( 1100, 200 );
-        fclose( stdin );
-        fclose( stdout );
-        FreeConsole( );
+    #ifdef __DEBUG__
+        g_console.Dettach( );
+    #endif __DEBUG__
         FreeLibraryAndExitThread( static_cast< HMODULE >( h_module ), EXIT_SUCCESS );
     }
     catch ( const std::runtime_error &error ) {
@@ -57,12 +62,6 @@ DWORD WINAPI Exit( void* h_module ) {
     #ifdef __DEBUG__
         _RPT0( _CRT_ERROR, error.what( ) );
     #endif __DEBUG__
-
-        Beep( 1500, 700 );
-        fclose( stdin );
-        fclose( stdout );
-        FreeConsole( );
-        FreeLibraryAndExitThread( static_cast< HMODULE >( h_module ), EXIT_SUCCESS );
     }
 }
 

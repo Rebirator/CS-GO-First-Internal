@@ -1,8 +1,9 @@
-#include "NetvarManager.hpp"
+#include "NetVarManager.hpp"
+#include "Interfaces.hpp"
 
-CNetvar g_netvar { };
+CNetVar g_NetVar { };
 
-RecvProp CNetvar::GetPropPtrFromTable( const char* prop, RecvTable* recv_table ) {
+RecvProp CNetVar::GetPropPtrFromTable( const char* prop, RecvTable* recv_table ) {
     for ( int i = 0; i < recv_table->m_nProps; i++ ) {
         RecvProp recv_prop = recv_table->m_pProps[ i ];
 
@@ -13,7 +14,7 @@ RecvProp CNetvar::GetPropPtrFromTable( const char* prop, RecvTable* recv_table )
     return RecvProp( 0 );
 }
 
-intptr_t CNetvar::GetPropOffsetFromTable( const char* prop, RecvTable* recv_table ) {
+intptr_t CNetVar::GetPropOffsetFromTable( const char* prop, RecvTable* recv_table ) {
     for ( int i = 0; i < recv_table->m_nProps; i++ ) {
         RecvProp recv_prop = recv_table->m_pProps[ i ];
 
@@ -31,7 +32,7 @@ intptr_t CNetvar::GetPropOffsetFromTable( const char* prop, RecvTable* recv_tabl
     return 0;
 }
 
-RecvProp CNetvar::GetPropPtr( const char* table, const char* prop ) {
+RecvProp CNetVar::GetPropPtr( const char* table, const char* prop ) {
     for ( CClientClass* cur_class = g_interfaces.m_pClient->GetAllClasses( ); cur_class != nullptr; cur_class = cur_class->m_pNext ) {
         if ( _stricmp( cur_class->m_pRecvTable->m_pNetTableName, table ) == 0 )
             return GetPropPtrFromTable( prop, cur_class->m_pRecvTable );
@@ -40,7 +41,7 @@ RecvProp CNetvar::GetPropPtr( const char* table, const char* prop ) {
     return RecvProp( 0 );
 }
 
-intptr_t CNetvar::GetPropOffset( const char* table, const char* prop ) {
+intptr_t CNetVar::GetPropOffset( const char* table, const char* prop ) {
     for ( CClientClass* cur_class = g_interfaces.m_pClient->GetAllClasses( ); cur_class != nullptr; cur_class = cur_class->m_pNext ) {
         if ( _stricmp( cur_class->m_pRecvTable->m_pNetTableName, table ) == 0 )
             return GetPropOffsetFromTable( prop, cur_class->m_pRecvTable );

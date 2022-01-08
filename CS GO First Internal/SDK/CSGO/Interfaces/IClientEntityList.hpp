@@ -1,8 +1,7 @@
 #ifndef __SDK_INTERFACES_ICLIENTENTITYLIST_HPP__
 #define __SDK_INTERFACES_ICLIENTENTITYLIST_HPP__
 
-#include "../C_Entity.hpp"
-#include "../../Utils/Misc.hpp"
+#include "../Cheat\CEntityPlayer.hpp"
 
 #include "../VirtualMethod.hpp"
 #include "IClientNetworkable.hpp"
@@ -28,9 +27,9 @@ public:
 
 	VIRTUAL_METHOD( IClientUnknown*, GetClientUnknownFromHandle, GETCLIENTUNKNOWNFROMHANDLE, ( this, entity ), void* entity );
 
-	VIRTUAL_METHOD( C_Entity*, GetClientEntity, GETCLIENTENTITY, ( this, entity_id ), int entity_id );
+	VIRTUAL_METHOD( CEntityPlayer*, GetClientEntity, GETCLIENTENTITY, ( this, entity_id ), int entity_id );
 
-	VIRTUAL_METHOD( C_Entity*, GetClientEntityFromHandle, GETCLIENTENTITYFROMHANDLE, ( this, entity ), void* entity );
+	VIRTUAL_METHOD( CEntityPlayer*, GetClientEntityFromHandle, GETCLIENTENTITYFROMHANDLE, ( this, entity ), void* entity );
 
 	VIRTUAL_METHOD( int, NumberOfEntities, NUMBEROFENTITIES, ( this, include_non_networkable ), bool include_non_networkable );
 

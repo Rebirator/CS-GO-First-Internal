@@ -22,11 +22,8 @@ void C_Console::Attach( const char* title ) {
 }
 
 void C_Console::Dettach( ) {
-    if ( fclose( f_stream_out ) )                                        // It get error code, if == 0, then OK, else error
-        throw std::runtime_error( "Failed to close stdout filestream!" );
-
-    if ( fclose( f_stream_in ) )                                         // It get error code, if == 0, then OK, else error
-        throw std::runtime_error( "Failed to close stdin filestream!" );
+    fclose( f_stream_out );
+    fclose( f_stream_in );
 
     if ( !FreeConsole( ) )
         throw std::runtime_error( "Failed to close console!" );

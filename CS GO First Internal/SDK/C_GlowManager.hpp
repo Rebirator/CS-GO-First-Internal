@@ -3,7 +3,7 @@
 
 #include "Offsets.hpp"
 #include "../Utils/Pad.hpp"
-#include "C_Entity.hpp"
+#include "CSGO\Cheat\CEntityPlayer.hpp"
 
 struct GlowDefinition_t {
 	// Reset this address
@@ -31,9 +31,9 @@ struct GlowDefinition_t {
 
 class C_GlowManager {
 public:
-	void	Set( C_Entity* Entity, float R, float G, float B, float A );
+	void	Set( CEntityPlayer* Entity, float R, float G, float B, float A );
 
-	uintptr_t	GetIndex( C_Entity* Entity );
+	uintptr_t	GetIndex( CEntityPlayer* Entity );
 }; extern C_GlowManager g_glow_manager;
 
 #endif//__C_GLOWMANAGER__

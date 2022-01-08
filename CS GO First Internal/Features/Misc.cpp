@@ -1,6 +1,6 @@
 #include <Windows.h>
 #include "Misc.hpp"
-#include "..\SDK\C_Entity.hpp"
+#include "..\SDK\CSGO\Cheat\CEntityPlayer.hpp"
 #include "..\SDK\C_Client.hpp"
 #include <iostream>
 #include <Psapi.h>
@@ -10,7 +10,7 @@ C_Misc g_misc { };
 
 void C_Misc::BunnyHop( ) {
 	if ( GetAsyncKeyState( VK_SPACE ) ) {
-		if ( g_pLocalEntity->GetFlags( ) & ( 1 << 0 ) ) {
+		if ( g_pLocalEntity->Flags( ) & ( 1 << 0 ) ) {
 			g_client.DoJump( );
 		}
 	}
@@ -18,9 +18,9 @@ void C_Misc::BunnyHop( ) {
 
 void C_Misc::RadarHack( ) {
 	for ( short i = 1; i < g_client.GetMaxClients( ); i++ ) {
-		C_Entity* entity = g_entity.GetByID( i );
+		CEntityPlayer* entity = g_entity.GetByID( i );
 
-		if ( entity && !entity->IsSpotted( ) && entity->GetTeam( ) != g_pLocalEntity->GetTeam( ) ) {
+		if ( entity && !entity->IsSpotted( ) && entity->Team( ) != g_pLocalEntity->Team( ) ) {
 			entity->SetSpotted( true );
 		}
 	}
@@ -30,14 +30,9 @@ void C_Misc::RecoilControlSystem( ) {
 	static Vector3 old_punch;
 	Vector3 punch_angle = g_pLocalEntity->GetAimPunch( ) * 2.1f;
 
-	if ( g_pLocalEntity->GetShotsFired( ) > 1 ) {
-		g_client.SetViewAngles( 
-			g_vector3.NormalizeAngles( 
-				Vector3( 
-					g_client.GetViewAngles( ).x + old_punch.x - punch_angle.x, g_client.GetViewAngles( ).y + old_punch.y - punch_angle.y, 0.0f 
-				) 
-			) 
-		);
+	if ( g_pLocalEntity->ShotsFired( ) > 1 ) {
+		Vector3 new_viewangles = g_client.GetViewAngles( ) + old_punch - punch_angle;
+		g_client.SetViewAngles( new_viewangles.NormalizeAngles( ) );
 	}
 
 	old_punch = punch_angle;

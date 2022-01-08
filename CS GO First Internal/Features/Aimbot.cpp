@@ -1,27 +1,21 @@
 #include "Aimbot.hpp"
-#include "..\SDK\C_Entity.hpp"
-#include "..\SDK\C_Weapon.hpp"
-#include "..\Utils\Vector3.hpp"
+#include "..\SDK\CSGO\Cheat\CEntityPlayer.hpp"
+#include "..\Utils\DataTypes\Vector3.hpp"
 #include "..\SDK\C_Client.hpp"
 
 C_Aimbot g_aimbot { };
 
 void C_Aimbot::Aimbot( ) {
 	if ( GetAsyncKeyState( VK_RBUTTON ) ) {
-		C_Entity* entity = g_entity.GetClosestEntity( );
+		CEntityPlayer* entity = g_entity.GetClosestEntity( );
 
-		if ( !entity->IsAlive( ) || entity->GetTeam( ) == g_pLocalEntity->GetTeam( ) )
+		if ( !entity->Alive( ) || entity->Team( ) == g_pLocalEntity->Team( ) )
 			return;
 
-		Vector3 aim_angles = g_vector3.CalculateAngles( g_pLocalEntity->GetPosition( ), entity->GetPosition( ) );
+		Vector3 aim_angles = g_pLocalEntity->GetPosition( ).CalculateAngles( entity->GetPosition( ) );
 		Vector3 diff_smoothed = ( aim_angles - g_client.GetViewAngles( ) ) / 40;
 
-		g_client.SetViewAngles( 
-			g_vector3.NormalizeAngles( 
-				Vector3( 
-					g_client.GetViewAngles( ).x + diff_smoothed.x, g_client.GetViewAngles( ).y + diff_smoothed.y, 0.0f 
-				) 
-			) 
-		);
+		Vector3 viewangles( g_client.GetViewAngles( ) + diff_smoothed );
+		g_client.SetViewAngles( viewangles.NormalizeAngles( ) );
 	}
 }

@@ -2,7 +2,7 @@
 #define __C_COLORRENDERMANAGER__
 
 #include "Offsets.hpp"
-#include "C_Entity.hpp"
+#include "CSGO\Cheat\CEntityPlayer.hpp"
 
 struct ColorRenderDefinition_t {
 	// Reset this address
@@ -20,7 +20,7 @@ class C_ColorRenderManager {
 public:
 	bool can_change_brightness = true;
 
-	void Set( C_Entity* entity, BYTE r, BYTE g, BYTE b );
+	void Set( CEntityPlayer* entity, BYTE r, BYTE g, BYTE b );
 	void Brightness( float value );
 }; extern C_ColorRenderManager g_color_render_manager;
 

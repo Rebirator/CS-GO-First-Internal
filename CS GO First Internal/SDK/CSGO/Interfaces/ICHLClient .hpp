@@ -1,9 +1,8 @@
 #ifndef __SDK_INTERFACES_ICHLCLIENT_HPP__
 #define __SDK_INTERFACES_ICHLCLIENT_HPP__
 
-#include "../../Utils/Misc.hpp"
-
 #include "../VirtualMethod.hpp"
+
 #include "../Game/ClientClass.hpp"
 
 class ICHLClient {

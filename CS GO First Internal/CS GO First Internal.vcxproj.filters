@@ -27,7 +27,7 @@
     <ClInclude Include="Features\TriggerBot.hpp">
       <Filter>Features</Filter>
     </ClInclude>
-    <ClInclude Include="SDK\C_Entity.hpp">
+    <ClInclude Include="SDK\CSGO\Cheat\CEntityPlayer.hpp">
       <Filter>SDK</Filter>
     </ClInclude>
     <ClInclude Include="SDK\Hazedumper.hpp">
@@ -36,14 +36,11 @@
     <ClInclude Include="Utils\Defines.hpp">
       <Filter>Utils</Filter>
     </ClInclude>
-    <ClInclude Include="Utils\Vector3.hpp">
+    <ClInclude Include="Utils\DataTypes\Vector3.hpp">
       <Filter>Utils</Filter>
     </ClInclude>
     <ClInclude Include="Core\Hack\Hack.hpp">
       <Filter>Main</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\C_Weapon.hpp">
-      <Filter>SDK</Filter>
     </ClInclude>
     <ClInclude Include="SDK\C_Client.hpp">
       <Filter>SDK</Filter>
@@ -70,19 +67,22 @@
       <Filter>Utils</Filter>
     </ClInclude>
     <ClInclude Include="Utils\Pad.hpp" />
-    <ClInclude Include="SDK\Interfaces\IClientEntityList.hpp" />
-    <ClInclude Include="SDK\Interfaces\IClientNetworkable.hpp" />
-    <ClInclude Include="SDK\Interfaces\IClientUnknown.hpp" />
-    <ClInclude Include="SDK\Interfaces.hpp" />
+    <ClInclude Include="SDK\CSGO\Interfaces\IClientEntityList.hpp" />
+    <ClInclude Include="SDK\CSGO\Interfaces\IClientNetworkable.hpp" />
+    <ClInclude Include="SDK\CSGO\Interfaces\IClientUnknown.hpp" />
+    <ClInclude Include="SDK\CSGO\Interfaces.hpp" />
     <ClInclude Include="Core\Init\Init.hpp" />
     <ClInclude Include="Core\Console\Console.hpp" />
     <ClInclude Include="Core\Hooks\Hooks.hpp" />
-    <ClInclude Include="SDK\NetvarManager.hpp" />
-    <ClInclude Include="SDK\Game\ClientClass.hpp" />
-    <ClInclude Include="SDK\Game\DTRecv.hpp" />
-    <ClInclude Include="SDK\Interfaces\ICHLClient .hpp" />
-    <ClInclude Include="Utils\Misc.hpp" />
+    <ClInclude Include="SDK\CSGO\NetVarManager.hpp" />
+    <ClInclude Include="SDK\CSGO\Game\ClientClass.hpp" />
+    <ClInclude Include="SDK\CSGO\Game\DTRecv.hpp" />
+    <ClInclude Include="SDK\CSGO\Interfaces\ICHLClient .hpp" />
     <ClInclude Include="SDK\VirtualMethod.hpp" />
+    <ClInclude Include="SDK\DirectX\D3DX9.hpp" />
+    <ClInclude Include="Core\Hooks\Targets\hkEndScene.hpp" />
+    <ClInclude Include="SDK\DirectX\Render.hpp" />
+    <ClInclude Include="Utils\DataTypes\Color.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Features\Misc.cpp">
@@ -91,7 +91,7 @@
     <ClCompile Include="Features\TriggerBot.cpp">
       <Filter>Features</Filter>
     </ClCompile>
-    <ClCompile Include="SDK\C_Entity.cpp">
+    <ClCompile Include="SDK\CSGO\Cheat\CEntityPlayer.cpp">
       <Filter>SDK</Filter>
     </ClCompile>
     <ClCompile Include="Core\Hack\Hack.cpp">
@@ -99,12 +99,6 @@
     </ClCompile>
     <ClCompile Include="Core\dllmain.cpp">
       <Filter>Main</Filter>
-    </ClCompile>
-    <ClCompile Include="Utils\Vector3.cpp">
-      <Filter>Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="SDK\C_Weapon.cpp">
-      <Filter>SDK</Filter>
     </ClCompile>
     <ClCompile Include="SDK\C_Client.cpp">
       <Filter>SDK</Filter>
@@ -128,10 +122,13 @@
       <Filter>Utils</Filter>
     </ClCompile>
     <ClCompile Include="Core\Init\Init.cpp" />
-    <ClCompile Include="SDK\Interfaces.cpp" />
+    <ClCompile Include="SDK\CSGO\Interfaces.cpp" />
     <ClCompile Include="Core\Console\Console.cpp" />
     <ClCompile Include="Core\Hooks\Hooks.cpp" />
-    <ClCompile Include="SDK\NetvarManager.cpp" />
+    <ClCompile Include="SDK\CSGO\NetVarManager.cpp" />
+    <ClCompile Include="SDK\DirectX\D3DX9.cpp" />
+    <ClCompile Include="Core\Hooks\Targets\hkEndScene.cpp" />
+    <ClCompile Include="SDK\DirectX\Render.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />

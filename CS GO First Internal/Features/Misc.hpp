@@ -2,7 +2,7 @@
 #define __FEATURES_MISC__
 
 #include "..\Utils\Defines.hpp"
-#include "..\Utils\Vector3.hpp"
+#include "..\Utils\DataTypes\Vector3.hpp"
 
 class C_Misc {
 public:

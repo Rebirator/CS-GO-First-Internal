@@ -1,20 +1,19 @@
-#ifndef __SDK_NETVARMANAGER_HPP__
-#define __SDK_NETVARMANAGER_HPP__
+#pragma once
 
 #include <Windows.h>
 
-#include "Game/ClientClass.hpp"
 #include "Game/DTRecv.hpp"
-#include "Interfaces.hpp"
 
-class CNetvar {
+class CNetVar {   
 private:
     RecvProp GetPropPtrFromTable( const char* prop, RecvTable* recv_table );
     intptr_t GetPropOffsetFromTable( const char* prop, RecvTable* recv_table );
-    
+
 public:
     RecvProp GetPropPtr( const char* table, const char* prop );
     intptr_t GetPropOffset( const char* table, const char* prop );
-}; extern CNetvar g_netvar;
+}; extern CNetVar g_NetVar;
 
-#endif  __SDK_NETVARMANAGER_HPP__
+#define NETVAR( return_type, name, table, prop ) return_type name( ) { \
+    return *reinterpret_cast< return_type* >( this + g_NetVar.GetPropOffset( table, prop ) ); \
+}

@@ -1,9 +1,10 @@
 #include "C_GlowManager.hpp"
 #include <iostream>
+#include "CSGO\NetVarManager.hpp"
 
 C_GlowManager g_glow_manager { };
 
-void C_GlowManager::Set( C_Entity* entity, float r, float g, float b, float a ) {
+void C_GlowManager::Set( CEntityPlayer* entity, float r, float g, float b, float a ) {
 	C_GlowManager* glow_object_manager = *reinterpret_cast< C_GlowManager** >( g_Game::ClientDll + g_Game::Signatures::dwGlowObjectManager );
 	GlowDefinition_t glow = *reinterpret_cast< GlowDefinition_t* >( glow_object_manager + ( g_glow_manager.GetIndex( entity ) * 0x38 ) );
 
@@ -17,6 +18,6 @@ void C_GlowManager::Set( C_Entity* entity, float r, float g, float b, float a ) 
 	*reinterpret_cast< GlowDefinition_t* >( glow_object_manager + ( g_glow_manager.GetIndex( entity ) * 0x38 ) ) = glow;
 }
 
-uintptr_t C_GlowManager::GetIndex( C_Entity* entity ) {
+uintptr_t C_GlowManager::GetIndex( CEntityPlayer* entity ) {
 	return *reinterpret_cast< uintptr_t* >( entity + g_Game::Netvars::m_iGlowIndex );
 }
