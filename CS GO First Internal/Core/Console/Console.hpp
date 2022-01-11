@@ -32,6 +32,6 @@ public:
         }
     #endif __DEBUG__
     }
-}; extern C_Console g_console;
+}; extern C_Console g_Console;
 
 #endif __CORE_CONSOLE_CONSOLE_HPP__

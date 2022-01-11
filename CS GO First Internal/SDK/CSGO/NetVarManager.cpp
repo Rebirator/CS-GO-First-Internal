@@ -33,7 +33,7 @@ intptr_t CNetVar::GetPropOffsetFromTable( const char* prop, RecvTable* recv_tabl
 }
 
 RecvProp CNetVar::GetPropPtr( const char* table, const char* prop ) {
-    for ( CClientClass* cur_class = g_interfaces.m_pClient->GetAllClasses( ); cur_class != nullptr; cur_class = cur_class->m_pNext ) {
+    for ( CClientClass* cur_class = g_Interfaces.m_pClient->GetAllClasses( ); cur_class != nullptr; cur_class = cur_class->m_pNext ) {
         if ( _stricmp( cur_class->m_pRecvTable->m_pNetTableName, table ) == 0 )
             return GetPropPtrFromTable( prop, cur_class->m_pRecvTable );
     }
@@ -42,7 +42,7 @@ RecvProp CNetVar::GetPropPtr( const char* table, const char* prop ) {
 }
 
 intptr_t CNetVar::GetPropOffset( const char* table, const char* prop ) {
-    for ( CClientClass* cur_class = g_interfaces.m_pClient->GetAllClasses( ); cur_class != nullptr; cur_class = cur_class->m_pNext ) {
+    for ( CClientClass* cur_class = g_Interfaces.m_pClient->GetAllClasses( ); cur_class != nullptr; cur_class = cur_class->m_pNext ) {
         if ( _stricmp( cur_class->m_pRecvTable->m_pNetTableName, table ) == 0 )
             return GetPropOffsetFromTable( prop, cur_class->m_pRecvTable );
     }

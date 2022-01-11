@@ -2,7 +2,7 @@
 
 Hook g_Hook { 0, 0, 0, 0 };
 
-void Hook::Detour_x86( BYTE * target, BYTE * source, short length ) {
+void Hook::Detour_x86( BYTE* target, BYTE* source, short length ) {
 	if ( length < 5 ) return;
 
 	DWORD cur_protect;

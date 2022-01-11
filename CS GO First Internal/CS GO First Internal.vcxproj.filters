@@ -83,6 +83,14 @@
     <ClInclude Include="Core\Hooks\Targets\hkEndScene.hpp" />
     <ClInclude Include="SDK\DirectX\Render.hpp" />
     <ClInclude Include="Utils\DataTypes\Color.hpp" />
+    <ClInclude Include="SDK\DirectX\Imgui\Backend\imgui_impl_dx9.h" />
+    <ClInclude Include="SDK\DirectX\Imgui\Backend\imgui_impl_win32.h" />
+    <ClInclude Include="SDK\DirectX\Imgui\imconfig.h" />
+    <ClInclude Include="SDK\DirectX\Imgui\imgui.h" />
+    <ClInclude Include="SDK\DirectX\Imgui\imgui_internal.h" />
+    <ClInclude Include="SDK\DirectX\Imgui\imstb_rectpack.h" />
+    <ClInclude Include="SDK\DirectX\Imgui\imstb_textedit.h" />
+    <ClInclude Include="SDK\DirectX\Imgui\imstb_truetype.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Features\Misc.cpp">
@@ -129,6 +137,13 @@
     <ClCompile Include="SDK\DirectX\D3DX9.cpp" />
     <ClCompile Include="Core\Hooks\Targets\hkEndScene.cpp" />
     <ClCompile Include="SDK\DirectX\Render.cpp" />
+    <ClCompile Include="SDK\DirectX\Imgui\Backend\imgui_impl_dx9.cpp" />
+    <ClCompile Include="SDK\DirectX\Imgui\Backend\imgui_impl_win32.cpp" />
+    <ClCompile Include="SDK\DirectX\Imgui\imgui.cpp" />
+    <ClCompile Include="SDK\DirectX\Imgui\imgui_demo.cpp" />
+    <ClCompile Include="SDK\DirectX\Imgui\imgui_draw.cpp" />
+    <ClCompile Include="SDK\DirectX\Imgui\imgui_tables.cpp" />
+    <ClCompile Include="SDK\DirectX\Imgui\imgui_widgets.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />

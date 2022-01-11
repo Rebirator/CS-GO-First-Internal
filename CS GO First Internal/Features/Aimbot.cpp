@@ -12,7 +12,7 @@ void C_Aimbot::Aimbot( ) {
 		if ( !entity->Alive( ) || entity->Team( ) == g_pLocalEntity->Team( ) )
 			return;
 
-		Vector3 aim_angles = g_pLocalEntity->GetPosition( ).CalculateAngles( entity->GetPosition( ) );
+		Vector3 aim_angles = g_pLocalEntity->Position( ).CalculateAngles( entity->Position( ) );
 		Vector3 diff_smoothed = ( aim_angles - g_client.GetViewAngles( ) ) / 40;
 
 		Vector3 viewangles( g_client.GetViewAngles( ) + diff_smoothed );

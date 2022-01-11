@@ -1,6 +1,15 @@
-#ifndef __MENU__
-#define __MENU__
+#ifndef __GUI_MENU_HPP__
+#define __GUI_MENU_HPP__
 
-void Gui( );
+class CMenu {
+private:
+    void Top( );
+    void TabLegit( );
+    void TabESP( );
+    void TabSettings( );
 
-#endif//__MENU__
+public:
+    void Render( );
+}; extern CMenu g_Menu;
+
+#endif  __GUI_MENU_HPP__

@@ -5,45 +5,22 @@
 CEntityPlayer g_entity { };
 
 bool CEntityPlayer::Alive( ) {
-	if ( !this )
-		return false;
-
-	if ( this->Health( ) > 0 && this->Team( ) )
+	if ( this && this->Health( ) > 0 && this->Team( ) )
 		return true;
 
 	return false;
+}
+
+void CEntityPlayer::SetSpotted( bool val ) {
+	*reinterpret_cast< bool* >( this + g_NetVar.GetPropOffset( "DT_BaseEntity", "m_bSpotted" ) ) = val;
 }
 
 int CEntityPlayer::GetCrosshairEntityID( ) {
 	return *reinterpret_cast< int* >( this->Get( g_LocalPlayer ) + g_Game::Netvars::m_iCrosshairId );
 }
 
-Vector3 CEntityPlayer::GetPosition( ) {
-	return *reinterpret_cast< Vector3* >( this + g_Game::Netvars::m_vecOrigin );
-}
-
-Vector3 CEntityPlayer::GetViewAngles( ) {
-	return *reinterpret_cast< Vector3* >( this->Get( g_LocalPlayer ) + g_Game::Netvars::m_vecViewOffset );
-}
-
-Vector3 CEntityPlayer::GetAimPunch( ) {
-	return *reinterpret_cast< Vector3* >( this->Get( g_LocalPlayer ) + g_Game::Netvars::m_aimPunchAngle );
-}
-
 bool CEntityPlayer::IsDormant( ) {
 	return *reinterpret_cast< bool* >( this + g_Game::Signatures::m_bDormant );
-}
-
-bool CEntityPlayer::IsSpotted( ) {
-	return *reinterpret_cast< bool* >( this + g_Game::Netvars::m_bSpotted );
-}
-
-bool CEntityPlayer::IsDefusing( ) {
-	return *reinterpret_cast< bool* >( this + g_Game::Netvars::m_bIsDefusing );
-}
-
-void CEntityPlayer::SetSpotted( bool value ) {
-	*reinterpret_cast< bool* >( this + g_Game::Netvars::m_bSpotted ) = value;
 }
 
 CEntityPlayer* CEntityPlayer::GetByID( short entity_id ) {
@@ -51,9 +28,9 @@ CEntityPlayer* CEntityPlayer::GetByID( short entity_id ) {
 }
 
 CEntityPlayer* CEntityPlayer::GetByCrosshairID( ) {
-	if ( this->GetCrosshairEntityID( ) > 0 && this->GetCrosshairEntityID( ) <= g_client.GetMaxClients( ) )
+	if ( this->CrosshairEntityID( ) > 0 && this->CrosshairEntityID( ) <= g_client.GetMaxClients( ) )
 		return *reinterpret_cast< CEntityPlayer** >( g_Game::ClientDll + g_Game::Signatures::dwEntityList +
-											  ( ( this->GetCrosshairEntityID( ) - 1 ) * 0x10 ) );
+											  ( ( this->CrosshairEntityID( ) - 1 ) * 0x10 ) );
 	return nullptr;
 }
 
@@ -67,8 +44,8 @@ CEntityPlayer* CEntityPlayer::GetClosestEntity( ) {
 		if ( !entity->Alive( ) )
 			continue;
 
-		if ( g_pLocalEntity->GetPosition( ).DistanceMeters( entity->GetPosition( ) ) < 5 || closest_distance == 0.0f ) {
-			closest_distance = g_pLocalEntity->GetPosition( ).DistanceMeters( entity->GetPosition( ) );
+		if ( g_pLocalEntity->Position( ).DistanceMeters( entity->Position( ) ) < 5 || closest_distance == 0.0f ) {
+			closest_distance = g_pLocalEntity->Position( ).DistanceMeters( entity->Position( ) );
 			closest_ent_id = i;
 		}
 	}

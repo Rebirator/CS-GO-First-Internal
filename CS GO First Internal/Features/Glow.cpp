@@ -9,8 +9,8 @@
 C_Glow g_glow { };
 
 void C_Glow::Glow( ) {
-	for ( short i = 1; i < g_interfaces.m_pClientEntityList->GetHighestEntityIndex( ); i++ ) {
-		CEntityPlayer* entity = g_interfaces.m_pClientEntityList->GetClientEntity( i );
+	for ( short i = 1; i < g_Interfaces.m_pClientEntityList->GetHighestEntityIndex( ); i++ ) {
+		CEntityPlayer* entity = g_Interfaces.m_pClientEntityList->GetClientEntity( i );
 
 		if ( entity->Alive( ) ) {
 			if ( entity->Team( ) != g_pLocalEntity->Team( ) ) {

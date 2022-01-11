@@ -17,7 +17,7 @@ public:
     IClientNetworkable* p_mClientNetworkable    = nullptr;
     IClientEntityList*  m_pClientEntityList     = nullptr;
     ICHLClient*         m_pClient               = nullptr;
-}; extern CInterfaces g_interfaces;
+}; extern CInterfaces g_Interfaces;
 
 class CInterface {
 private:
@@ -38,6 +38,6 @@ public:
         else if ( IsBadReadPtr( interface_, sizeof( void* ) ) )
             throw std::runtime_error( std::string( interface_name ) + " is invalid ptr" );
     }
-}; extern CInterface g_interface;
+}; extern CInterface g_Interface;
 
 #endif//__SDK_INTERFACES_HPP__

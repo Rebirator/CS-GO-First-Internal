@@ -21,7 +21,7 @@ public:
 	Vector3 operator / ( float a ) { return { x / a, y / a, z / a }; }
 
 	float Distance( Vector3 target ) {
-		return sqrt( pow( this->x - target.x, 2 ) + pow( this->y - target.y, 2 ) + pow( this->z - target.z, 2 ) );
+		return ( float )sqrt( pow( this->x - target.x, 2 ) + pow( this->y - target.y, 2 ) + pow( this->z - target.z, 2 ) );
 	}
 
 	float DistanceMeters( Vector3 target ) {

@@ -2,7 +2,7 @@
 
 #include "Console.hpp"
 
-C_Console g_console { };
+C_Console g_Console { };
 
 void C_Console::Attach( const char* title ) {
     if ( !AllocConsole( ) )

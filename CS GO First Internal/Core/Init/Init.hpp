@@ -3,10 +3,13 @@
 
 class Init {
 public:
-    void Interfaces( );
+    void InterfacesInit( );
+    void HooksInit( );
+    void HooksRelease( );
 
 public:
     void InitAll( );
-}; extern Init g_init;
+    void ReleaseAll( );
+}; extern Init g_Init;
 
 #endif __CORE_INIT_INIT_HPP__

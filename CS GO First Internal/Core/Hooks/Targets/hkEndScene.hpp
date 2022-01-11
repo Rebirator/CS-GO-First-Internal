@@ -3,9 +3,15 @@
 
 #include "..\..\..\SDK\DirectX\D3DX9.hpp"
 
-using EndSceneFn = HRESULT( APIENTRY* )( LPDIRECT3DDEVICE9 device );
+using EndSceneFn = HRESULT( WINAPI* )( LPDIRECT3DDEVICE9 device );
+extern LRESULT ImGui_ImplWin32_WndProcHandler( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam );
 
-void InitEndScene( );
-void DeinitEndScene( );
+void ImGuiInit( LPDIRECT3DDEVICE9 device );
+void ImGuiRelease( );
+
+namespace g_Hooks {
+    void EndSceneInit( );
+    void EndSceneRelease( );
+}
 
 #endif  __CORE_TARGETS_HKENDSCENE_HPP__

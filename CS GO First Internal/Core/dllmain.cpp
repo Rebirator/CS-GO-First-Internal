@@ -10,11 +10,9 @@
 DWORD WINAPI Entry( void* h_module ) {
     try {
     #ifdef __DEBUG__
-        g_console.Attach( ); 
+        g_Console.Attach( ); 
     #endif __DEBUG__
-        g_init.InitAll( );
-
-        InitEndScene( );
+        g_Init.InitAll( );
 
         while ( !GetAsyncKeyState( VK_END ) ) {
             Hack( );
@@ -31,7 +29,7 @@ DWORD WINAPI Entry( void* h_module ) {
 
         Beep( 1500, 700 );
     #ifdef __DEBUG__
-        g_console.Dettach( );
+        g_Console.Dettach( );
     #endif __DEBUG__
         FreeLibraryAndExitThread( static_cast< HMODULE >( h_module ), EXIT_SUCCESS );
     }
@@ -45,14 +43,14 @@ DWORD WINAPI Exit( void* h_module ) {
 
     try {
     #ifdef __DEBUG__
-        g_console.Dettach( );
+        g_Console.Dettach( );
     #endif __DEBUG__
 
-        DeinitEndScene( );
+        g_Init.ReleaseAll( );
 
         Beep( 1100, 200 );
     #ifdef __DEBUG__
-        g_console.Dettach( );
+        g_Console.Dettach( );
     #endif __DEBUG__
         FreeLibraryAndExitThread( static_cast< HMODULE >( h_module ), EXIT_SUCCESS );
     }
@@ -63,6 +61,8 @@ DWORD WINAPI Exit( void* h_module ) {
         _RPT0( _CRT_ERROR, error.what( ) );
     #endif __DEBUG__
     }
+
+    return EXIT_SUCCESS;
 }
 
 BOOL APIENTRY DllMain( HMODULE self, DWORD reason_for_call, LPVOID reserved ) {

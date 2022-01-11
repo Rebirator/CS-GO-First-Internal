@@ -3,7 +3,7 @@
 
 #include "../Cheat\CEntityPlayer.hpp"
 
-#include "../VirtualMethod.hpp"
+#include "..\..\VirtualMethod.hpp"
 #include "IClientNetworkable.hpp"
 #include "IClientUnknown.hpp"
 

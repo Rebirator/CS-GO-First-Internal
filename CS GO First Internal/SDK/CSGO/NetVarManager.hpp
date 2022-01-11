@@ -14,6 +14,10 @@ public:
     intptr_t GetPropOffset( const char* table, const char* prop );
 }; extern CNetVar g_NetVar;
 
-#define NETVAR( return_type, name, table, prop ) return_type name( ) { \
-    return *reinterpret_cast< return_type* >( this + g_NetVar.GetPropOffset( table, prop ) ); \
+#define NETVAR( return_type, name, table, prop, object ) return_type name( ) { \
+    return *reinterpret_cast< return_type* >( object + g_NetVar.GetPropOffset( table, prop ) ); \
+}
+
+#define NETVARA( return_type, name, table, prop, extra, object ) return_type name( ) { \
+    return *reinterpret_cast< return_type* >( object + ( g_NetVar.GetPropOffset( table, prop ) + extra ) ); \
 }
